@@ -1,0 +1,5 @@
+## 2012-11-16 0.1
+
+    * Push first version to public repository.
+    * Contains Ratings to capture information about likes\dislikes that people assigned to different objects.
+    * Badges can be assigned to people, which will change how this people influence rating of others.    
