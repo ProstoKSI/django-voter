@@ -31,12 +31,12 @@ Setup
 
 - Add 'blog' to INSTALLED_APPS ::
 
-    INSTALLED_APPS += ( 'django_voter', )
+    INSTALLED_APPS += ( 'ratings', )
 
 - Add RatingField to models you want to allow voting for: ::
 
 
-    from django_voter.models import RatingField
+    from ratings.models import RatingField
     
     class SomeModle(models.Model):
        ...

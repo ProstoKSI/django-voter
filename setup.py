@@ -3,7 +3,7 @@
 import os
 from setuptools import setup, find_packages
 
-from django_voter import VERSION, PROJECT
+from ratings import VERSION, PROJECT
 
 
 MODULE_NAME = 'django-voter'
