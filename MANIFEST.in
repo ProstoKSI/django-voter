@@ -1,2 +1,2 @@
-recursive-include django-voter *
-exclude *.pyc *.orig
+include LICENSE
+recursive-include ratings *
