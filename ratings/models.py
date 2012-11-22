@@ -6,8 +6,6 @@ from django.contrib.auth.models import User
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 
-from caching_ext.base import CachingMixin
-
 from misc.decorators import receiver
 
 VOTE_LIKE, VOTE_DISLIKE = range(2)
@@ -17,14 +15,14 @@ VOTE_CHOICES = (
     (VOTE_DISLIKE, _("Dislike"))
 )
 
-class RatingVote(CachingMixin):
+class RatingVote(models.Model):
     user = models.ForeignKey(User, related_name="rating_vote_list")
     rating = models.ForeignKey('Rating', related_name="rating_vote_list")
     vote_type = models.IntegerField("Vote type", choices=VOTE_CHOICES, 
         default=VOTE_LIKE)
     date = models.DateTimeField("Date", auto_now_add=True)
 
-class Rating(CachingMixin):
+class Rating(models.Model):
     score = models.FloatField(_("Score"), default=0)
     likes = models.IntegerField(_("Likes"), default=0)
     dislikes = models.IntegerField(_("Dislikes"), default=0)
@@ -54,7 +52,7 @@ class Rating(CachingMixin):
         return "<No info>"
  
 
-class Badge(CachingMixin):
+class Badge(models.Model):
     name = models.CharField(_("Name"), max_length=50)
     description = models.CharField(_("Description"), max_length=255)
     visible = models.BooleanField(_("Visible"), default=False)
