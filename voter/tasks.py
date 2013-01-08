@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 
 from celery.task import task
 
-from ratings import compute
+from voter import compute
 
 from poetry.models import Book
 from threadedcomments.models import ThreadedComment

@@ -9,7 +9,7 @@ except ImportError:
     from django.template.loader import render_to_string
 from django.contrib.auth.models import User
 
-from ratings.models import Rating, RatingVote
+from voter.models import Rating, RatingVote
 
 register = template.Library()
 

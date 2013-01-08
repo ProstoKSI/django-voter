@@ -8,8 +8,8 @@ from django.utils.translation import ugettext as _
 from misc.json_encode import json_response
 from misc.utils import str_to_class
 
-from ratings.models import Rating, RatingVote, VOTE_LIKE, VOTE_DISLIKE
-from ratings import tasks
+from voter.models import Rating, RatingVote, VOTE_LIKE, VOTE_DISLIKE
+from voter import tasks
 
 RATINGS_CONFIG = getattr(settings, "RATINGS_CONFIG", {})
 

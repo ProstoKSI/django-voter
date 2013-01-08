@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
-from ratings.models import Rating, RatingVote, Badge
+from voter.models import Rating, RatingVote, Badge
 
 class RatingVoteInline(admin.TabularInline):
     model = RatingVote
