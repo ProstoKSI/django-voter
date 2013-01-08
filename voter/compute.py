@@ -3,7 +3,7 @@ from math import log, pow
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.db.models import Q, Max
-from ratings.models import Rating, Badge, RatingVote, VOTE_LIKE, VOTE_DISLIKE
+from voter.models import Rating, Badge, RatingVote, VOTE_LIKE, VOTE_DISLIKE
 
 from poetry.models import Book
 from blog.models import Post
