@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load misc_tags %}
+
+{% if rating > 0 %}
+    {% set '+' plus %}
+    {% set 'positive' rating_class %}
+{% else %}
+    {% if rating < 0 %}
+        {% set 'negative' rating_class %}
+    {% else %}
+        {% set 'default' rating_class %}
+{% endif %}{% endif %}
+<div class="user_rating {{ rating_class }}" title="{% trans "Rating" %}: {{ plus }}{{ rating }}">
+    <span>{{ plus }}{{ rating }}</span>
+</div>

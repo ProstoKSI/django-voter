@@ -3,7 +3,10 @@ from django import template
 from django.template import Node, Variable, TemplateSyntaxError
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
-from django.template.loader import get_template, select_template
+try:
+    from coffin.shortcuts import render_to_string
+except ImportError:
+    from django.template.loader import render_to_string
 from django.contrib.auth.models import User
 
 from ratings.models import Rating, RatingVote
@@ -93,8 +96,7 @@ class RenderRatingNode(Node):
         context['obj_id'] = obj.id
         context['obj_type'] = obj_type
         
-        t = get_template(template_name)
-        return t.nodelist.render(context)
+        return render_to_string(template_name, context)
 
 
 @register.inclusion_tag('ratings/rating_table.html', takes_context=True)

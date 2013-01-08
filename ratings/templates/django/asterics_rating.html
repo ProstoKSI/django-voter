@@ -1,0 +1,17 @@
+{% load i18n %}
+<div class="asterics_rating">
+    <div class="voting {{ rating_class }}-rating-c">
+        <div class="voting {{ rating_class }}-rating-l no_repeat">
+            <div class="voting {{ rating_class }}-rating-r no_repeat">
+                <span class="vote-value">{{ rating }}</span>
+                {% if can_vote %}
+                    <span class="vote-title">
+                        <a><img src="{{ STATIC_URL }}ratings/asterics_rating/plus.gif" class="set_plus" title="{% trans "I like it" %}"></a>
+                        <img src="{{ STATIC_URL }}ratings/asterics_rating/separator.gif" class="separator">
+                        <a><img src="{{ STATIC_URL }}ratings/asterics_rating/minus.gif" class="set_minus" title="{% trans "I don't like it" %}"></a>
+                    </span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>    

@@ -1,0 +1,26 @@
+{% load i18n %}
+{% load avatar_tags %}
+{% load misc_tags %}
+{% load profile_bubble %}
+
+<h2>{% trans "Top-5 authors" %}</h2>
+<ol id="top_profiles">
+    {% for user in top_users %}
+        <li>
+            <span class="avatarname with_popup">
+                <a href="{% url poetry_user_works user %}">{% avatar user.profile 20 %} {{ user.profile.short_display_name }}</a>
+                {% get_profile_bubblepopup user 'left' %}
+            </span>
+        </li>
+    {% endfor %}
+</ol>
+
+<h2>{% trans "Top-5 books" %}</h2>
+<ol id="top_books">
+    {% for book in top_books %}
+        <li><a href="{% url poetry_read_book book.id book.slug %}">{{ book.name|cutafter:"30" }}</a></li>
+    {% endfor %}
+</ol>
+            
+<a href="{% url poetry_all_books %}"  class="all">{% trans "All books" %}</a>
+<a href="{% url auth_all_users %}"  class="all">{% trans "All users" %}</a>

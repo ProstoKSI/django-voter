@@ -1,0 +1,13 @@
+{% load i18n %}
+
+<div class="default_voting {% if not can_vote %}disable{% endif %}">
+    {% if can_vote %}
+        <a href="{% url ratings_like obj_type,obj_id %}" rel="vote" class="vote-plus" title="{% trans %}I like it{% endtrans %}"></a>
+        <span class="mark {{ rating_class }}">{{ rating }}</span>
+        <a href="{% url ratings_dislike obj_type,obj_id %}" rel="vote" class="vote-minus" title="{% trans %}I don't like it{% endtrans %}"></a>
+    {% else %}
+        <span class="vote-plus"></span>
+        <span class="mark {{ rating_class }}">{{ rating }}</span>
+        <span class="vote-minus"></span>
+    {% endif %}
+</div>    
