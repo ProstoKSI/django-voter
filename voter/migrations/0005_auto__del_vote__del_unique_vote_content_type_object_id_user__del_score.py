@@ -28,12 +28,12 @@ class Migration(SchemaMigration):
             ('visible', self.gf('django.db.models.fields.BooleanField')(default=False)),
             ('rating_weight', self.gf('django.db.models.fields.FloatField')(default=0)),
         ))
-        db.send_create_signal('ratings', ['Badge'])
+        db.send_create_signal('voter', ['Badge'])
 
         # Adding M2M table for field users on 'Badge'
         db.create_table('ratings_badge_users', (
             ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
-            ('badge', models.ForeignKey(orm['ratings.badge'], null=False)),
+            ('badge', models.ForeignKey(orm['voter.badge'], null=False)),
             ('user', models.ForeignKey(orm['auth.user'], null=False))
         ))
         db.create_unique('ratings_badge_users', ['badge_id', 'user_id'])
@@ -50,7 +50,7 @@ class Migration(SchemaMigration):
             ('date_added', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now)),
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
         ))
-        db.send_create_signal('ratings', ['Vote'])
+        db.send_create_signal('voter', ['Vote'])
 
         # Adding unique constraint on 'Vote', fields ['content_type', 'object_id', 'user']
         db.create_unique('ratings_vote', ['content_type_id', 'object_id', 'user_id'])
@@ -63,7 +63,7 @@ class Migration(SchemaMigration):
             ('content_type', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['contenttypes.ContentType'])),
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
         ))
-        db.send_create_signal('ratings', ['Score'])
+        db.send_create_signal('voter', ['Score'])
 
         # Adding unique constraint on 'Score', fields ['content_type', 'object_id']
         db.create_unique('ratings_score', ['content_type_id', 'object_id'])
@@ -112,7 +112,7 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        'ratings.badge': {
+        'voter.badge': {
             'Meta': {'object_name': 'Badge'},
             'description': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
@@ -121,22 +121,22 @@ class Migration(SchemaMigration):
             'users': ('django.db.models.fields.related.ManyToManyField', [], {'related_name': "'badge_list'", 'symmetrical': 'False', 'to': "orm['auth.User']"}),
             'visible': ('django.db.models.fields.BooleanField', [], {'default': 'False'})
         },
-        'ratings.rating': {
+        'voter.rating': {
             'Meta': {'object_name': 'Rating'},
             'dislikes': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'likes': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
             'score': ('django.db.models.fields.FloatField', [], {'default': '0'}),
-            'users': ('django.db.models.fields.related.ManyToManyField', [], {'related_name': "'rating'", 'symmetrical': 'False', 'through': "orm['ratings.RatingVote']", 'to': "orm['auth.User']"})
+            'users': ('django.db.models.fields.related.ManyToManyField', [], {'related_name': "'rating'", 'symmetrical': 'False', 'through': "orm['voter.RatingVote']", 'to': "orm['auth.User']"})
         },
-        'ratings.ratingvote': {
+        'voter.ratingvote': {
             'Meta': {'object_name': 'RatingVote'},
             'date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'rating': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'rating_vote_list'", 'to': "orm['ratings.Rating']"}),
+            'rating': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'rating_vote_list'", 'to': "orm['voter.Rating']"}),
             'user': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'rating_vote_list'", 'to': "orm['auth.User']"}),
             'vote_type': ('django.db.models.fields.IntegerField', [], {'default': '0'})
         }
     }
 
-    complete_apps = ['ratings']
+    complete_apps = ['voter']

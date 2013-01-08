@@ -15,17 +15,17 @@ class Migration(SchemaMigration):
             ('likes', self.gf('django.db.models.fields.IntegerField')(default=0)),
             ('dislikes', self.gf('django.db.models.fields.IntegerField')(default=0)),
         ))
-        db.send_create_signal('ratings', ['Rating'])
+        db.send_create_signal('voter', ['Rating'])
 
         # Adding model 'RatingVote'
         db.create_table('ratings_ratingvote', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('user', self.gf('django.db.models.fields.related.ForeignKey')(related_name='rating_vote_list', to=orm['auth.User'])),
-            ('rating', self.gf('django.db.models.fields.related.ForeignKey')(related_name='rating_vote_list', to=orm['ratings.Rating'])),
+            ('rating', self.gf('django.db.models.fields.related.ForeignKey')(related_name='rating_vote_list', to=orm['voter.Rating'])),
             ('vote_type', self.gf('django.db.models.fields.IntegerField')(default=0)),
             ('date', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
         ))
-        db.send_create_signal('ratings', ['RatingVote'])
+        db.send_create_signal('voter', ['RatingVote'])
 
 
     def backwards(self, orm):
@@ -74,23 +74,23 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        'ratings.rating': {
+        'voter.rating': {
             'Meta': {'object_name': 'Rating'},
             'dislikes': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'likes': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
             'score': ('django.db.models.fields.FloatField', [], {'default': '0'}),
-            'users': ('django.db.models.fields.related.ManyToManyField', [], {'related_name': "'rating'", 'symmetrical': 'False', 'through': "orm['ratings.RatingVote']", 'to': "orm['auth.User']"})
+            'users': ('django.db.models.fields.related.ManyToManyField', [], {'related_name': "'rating'", 'symmetrical': 'False', 'through': "orm['voter.RatingVote']", 'to': "orm['auth.User']"})
         },
-        'ratings.ratingvote': {
+        'voter.ratingvote': {
             'Meta': {'object_name': 'RatingVote'},
             'date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'rating': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'rating_vote_list'", 'to': "orm['ratings.Rating']"}),
+            'rating': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'rating_vote_list'", 'to': "orm['voter.Rating']"}),
             'user': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'rating_vote_list'", 'to': "orm['auth.User']"}),
             'vote_type': ('django.db.models.fields.IntegerField', [], {'default': '0'})
         },
-        'ratings.score': {
+        'voter.score': {
             'Meta': {'unique_together': "(('content_type', 'object_id'),)", 'object_name': 'Score'},
             'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']"}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
@@ -98,7 +98,7 @@ class Migration(SchemaMigration):
             'score': ('django.db.models.fields.FloatField', [], {'default': '0'}),
             'votes': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'})
         },
-        'ratings.vote': {
+        'voter.vote': {
             'Meta': {'unique_together': "(('content_type', 'object_id', 'user'),)", 'object_name': 'Vote'},
             'content_type': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'votes'", 'to': "orm['contenttypes.ContentType']"}),
             'date_added': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
@@ -109,4 +109,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['ratings']
+    complete_apps = ['voter']

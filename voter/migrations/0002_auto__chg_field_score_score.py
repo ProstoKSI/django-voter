@@ -55,7 +55,7 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        'ratings.score': {
+        'voter.score': {
             'Meta': {'unique_together': "(('content_type', 'object_id'),)", 'object_name': 'Score'},
             'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']"}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
@@ -63,7 +63,7 @@ class Migration(SchemaMigration):
             'score': ('django.db.models.fields.FloatField', [], {'default': '0'}),
             'votes': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'})
         },
-        'ratings.vote': {
+        'voter.vote': {
             'Meta': {'unique_together': "(('content_type', 'object_id', 'user'),)", 'object_name': 'Vote'},
             'content_type': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'votes'", 'to': "orm['contenttypes.ContentType']"}),
             'date_added': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
@@ -74,4 +74,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['ratings']
+    complete_apps = ['voter']

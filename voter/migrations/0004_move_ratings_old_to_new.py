@@ -4,7 +4,7 @@ from south.db import db
 from south.v2 import DataMigration
 from django.db import models
 
-from ratings.models import VOTE_LIKE, VOTE_DISLIKE
+from voter.models import VOTE_LIKE, VOTE_DISLIKE
 
 class Migration(DataMigration):
 
@@ -14,9 +14,9 @@ class Migration(DataMigration):
         Post = orm['blog.post']
         Profile = orm['auth_ext.profile']
         
-        Vote = orm['ratings.vote']
-        Rating = orm['ratings.rating']
-        RatingVote = orm['ratings.ratingvote']
+        Vote = orm['voter.vote']
+        Rating = orm['voter.rating']
+        RatingVote = orm['voter.ratingvote']
         
         books = Book.objects.all()
         posts = Post.objects.all()
@@ -116,7 +116,7 @@ class Migration(DataMigration):
             'middle_name': ('django.db.models.fields.CharField', [], {'default': "''", 'max_length': '40', 'blank': 'True'}),
             'phone': ('django.db.models.fields.CharField', [], {'max_length': '20', 'null': 'True', 'blank': 'True'}),
             'poetry_font_size': ('django.db.models.fields.PositiveSmallIntegerField', [], {'default': '3'}),
-            'rating': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'profile_list'", 'null': 'True', 'to': "orm['ratings.Rating']"}),
+            'rating': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'profile_list'", 'null': 'True', 'to': "orm['voter.Rating']"}),
             'sex': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
             'skype': ('django.db.models.fields.CharField', [], {'max_length': '40', 'null': 'True', 'blank': 'True'}),
             'timezone': ('django.db.models.fields.CharField', [], {'default': "'Europe/Kiev'", 'max_length': '100'}),
@@ -162,7 +162,7 @@ class Migration(DataMigration):
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'last_comment_datetime': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
             'publish': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
-            'rating': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'blog_list'", 'null': 'True', 'to': "orm['ratings.Rating']"}),
+            'rating': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'blog_list'", 'null': 'True', 'to': "orm['voter.Rating']"}),
             'slug': ('django.db.models.fields.SlugField', [], {'db_index': 'True', 'max_length': '50', 'blank': 'True'}),
             'status': ('django.db.models.fields.IntegerField', [], {'default': '1'}),
             'tags': ('tagging.fields.TagField', [], {}),
@@ -209,7 +209,7 @@ class Migration(DataMigration):
             'language': ('django.db.models.fields.CharField', [], {'default': "'ru'", 'max_length': '10'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
             'pages': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
-            'rating': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'book_list'", 'null': 'True', 'to': "orm['ratings.Rating']"}),
+            'rating': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'book_list'", 'null': 'True', 'to': "orm['voter.Rating']"}),
             'readers': ('django.db.models.fields.related.ManyToManyField', [], {'symmetrical': 'False', 'related_name': "'read_books'", 'blank': 'True', 'through': "orm['poetry.UserReadBook']", 'to': "orm['auth.User']"}),
             'readers_count': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
             'series': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'series_books'", 'null': 'True', 'to': "orm['poetry.BookSeries']"}),
@@ -278,23 +278,23 @@ class Migration(DataMigration):
             'website': ('django.db.models.fields.URLField', [], {'max_length': '200'}),
             'work_email': ('django.db.models.fields.EmailField', [], {'max_length': '75'})
         },
-        'ratings.rating': {
+        'voter.rating': {
             'Meta': {'object_name': 'Rating'},
             'dislikes': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'likes': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
             'score': ('django.db.models.fields.FloatField', [], {'default': '0'}),
-            'users': ('django.db.models.fields.related.ManyToManyField', [], {'related_name': "'rating'", 'symmetrical': 'False', 'through': "orm['ratings.RatingVote']", 'to': "orm['auth.User']"})
+            'users': ('django.db.models.fields.related.ManyToManyField', [], {'related_name': "'rating'", 'symmetrical': 'False', 'through': "orm['voter.RatingVote']", 'to': "orm['auth.User']"})
         },
-        'ratings.ratingvote': {
+        'voter.ratingvote': {
             'Meta': {'object_name': 'RatingVote'},
             'date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'rating': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'rating_vote_list'", 'to': "orm['ratings.Rating']"}),
+            'rating': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'rating_vote_list'", 'to': "orm['voter.Rating']"}),
             'user': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'rating_vote_list'", 'to': "orm['auth.User']"}),
             'vote_type': ('django.db.models.fields.IntegerField', [], {'default': '0'})
         },
-        'ratings.score': {
+        'voter.score': {
             'Meta': {'unique_together': "(('content_type', 'object_id'),)", 'object_name': 'Score'},
             'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']"}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
@@ -302,7 +302,7 @@ class Migration(DataMigration):
             'score': ('django.db.models.fields.FloatField', [], {'default': '0'}),
             'votes': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'})
         },
-        'ratings.vote': {
+        'voter.vote': {
             'Meta': {'unique_together': "(('content_type', 'object_id', 'user'),)", 'object_name': 'Vote'},
             'content_type': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'votes'", 'to': "orm['contenttypes.ContentType']"}),
             'date_added': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
@@ -322,10 +322,10 @@ class Migration(DataMigration):
             'ip_address': ('django.db.models.fields.IPAddressField', [], {'max_length': '15', 'null': 'True', 'blank': 'True'}),
             'object_id': ('django.db.models.fields.PositiveIntegerField', [], {}),
             'parent': ('django.db.models.fields.related.ForeignKey', [], {'default': 'None', 'related_name': "'children'", 'null': 'True', 'blank': 'True', 'to': "orm['threadedcomments.ThreadedComment']"}),
-            'rating': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'threaded_comment_list'", 'null': 'True', 'to': "orm['ratings.Rating']"}),
+            'rating': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'threaded_comment_list'", 'null': 'True', 'to': "orm['voter.Rating']"}),
             'status': ('django.db.models.fields.IntegerField', [], {'default': '1'}),
             'user': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']"})
         }
     }
 
-    complete_apps = ['poetry', 'blog', 'threadedcomments', 'auth_ext', 'ratings']
+    complete_apps = ['poetry', 'blog', 'threadedcomments', 'auth_ext', 'voter']

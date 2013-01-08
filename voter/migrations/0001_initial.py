@@ -17,7 +17,7 @@ class Migration(SchemaMigration):
             ('user', self.gf('django.db.models.fields.related.ForeignKey')(blank=True, related_name='poller', null=True, to=orm['auth.User'])),
             ('date_added', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now)),
         ))
-        db.send_create_signal('ratings', ['Vote'])
+        db.send_create_signal('voter', ['Vote'])
 
         # Adding unique constraint on 'Vote', fields ['content_type', 'object_id', 'user']
         db.create_unique('ratings_vote', ['content_type_id', 'object_id', 'user_id'])
@@ -30,7 +30,7 @@ class Migration(SchemaMigration):
             ('score', self.gf('django.db.models.fields.IntegerField')()),
             ('votes', self.gf('django.db.models.fields.PositiveIntegerField')()),
         ))
-        db.send_create_signal('ratings', ['Score'])
+        db.send_create_signal('voter', ['Score'])
 
         # Adding unique constraint on 'Score', fields ['content_type', 'object_id']
         db.create_unique('ratings_score', ['content_type_id', 'object_id'])
@@ -88,7 +88,7 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        'ratings.score': {
+        'voter.score': {
             'Meta': {'unique_together': "(('content_type', 'object_id'),)", 'object_name': 'Score'},
             'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']"}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
@@ -96,7 +96,7 @@ class Migration(SchemaMigration):
             'score': ('django.db.models.fields.IntegerField', [], {}),
             'votes': ('django.db.models.fields.PositiveIntegerField', [], {})
         },
-        'ratings.vote': {
+        'voter.vote': {
             'Meta': {'unique_together': "(('content_type', 'object_id', 'user'),)", 'object_name': 'Vote'},
             'content_type': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'votes'", 'to': "orm['contenttypes.ContentType']"}),
             'date_added': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
@@ -107,4 +107,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['ratings']
+    complete_apps = ['voter']
