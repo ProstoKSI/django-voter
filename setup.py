@@ -32,7 +32,7 @@ META_DATA = dict(
     author = "Illia Polosukhin",
     author_email = "ilblackdragon@gmail.com",
 
-    url = "http://github.com/ilblackdragon/django-voter.git",
+    url = "http://github.com/ProstoKSI/django-voter.git",
 
     packages = find_packages(),
     package_data = { '': PACKAGE_DATA, },
