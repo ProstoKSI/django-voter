@@ -23,7 +23,7 @@ Installation
 
 **Django voter** should be installed using pip: ::
 
-    pip install git+git://github.com/ilblackdragon/django-voter.git
+    pip install git+git://github.com/ProstoKSI/django-voter.git
 
 
 Setup
@@ -51,7 +51,7 @@ Will be later.
 Contributing
 ============
 
-Development of django-voter happens at github: https://github.com/ilblackdragon/django-voter
+Development of django-voter happens at github: https://github.com/ProstoKSI/django-voter
 Please, if you have any insight how to patch existing models - let me know. At this point, having a rating field at model that this field will be required at is the best solution I see from point of number database queries.
 
 License
