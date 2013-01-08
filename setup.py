@@ -9,7 +9,7 @@ from ratings import VERSION, PROJECT
 MODULE_NAME = 'django-voter'
 PACKAGE_DATA = list()
 
-for directory in [ 'templates', 'static' ]:
+for directory in [ 'voter/templates', 'voter/static' ]:
     for root, dirs, files in os.walk( os.path.join( MODULE_NAME, directory )):
         for filename in files:
             PACKAGE_DATA.append("%s/%s" % ( root[len(MODULE_NAME)+1:], filename ))
