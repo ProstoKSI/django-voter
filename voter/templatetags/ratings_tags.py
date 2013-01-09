@@ -28,7 +28,7 @@ def get_rating_span(obj):
         rating_class = "default"
     return "<span class=\"" + rating_class + "\">" + rating + "</span>"
 
-@register.inclusion_tag('ratings/user_rating.html', takes_context=True)
+@register.inclusion_tag('voter//user_rating.html', takes_context=True)
 def get_user_rating_div(context, obj):
     rating = round(obj.rating_score, 1)
     if abs(rating) < 2210:
@@ -81,7 +81,7 @@ class RenderRatingNode(Node):
             rating_class = "default"
         return rating, rating_class
         
-    def render(self, context, template_name="ratings/default_rating.html"):
+    def render(self, context, template_name="voter/default_rating.html"):
         obj = self.obj.resolve(context)
         obj_type = self.obj_type.resolve(context)
         if self.user: 
@@ -99,7 +99,7 @@ class RenderRatingNode(Node):
         return render_to_string(template_name, context)
 
 
-@register.inclusion_tag('ratings/rating_table.html', takes_context=True)
+@register.inclusion_tag('voter/rating_table.html', takes_context=True)
 def get_rating_table(context):
     from poetry.models import Book
     context['top_users'] = User.objects\

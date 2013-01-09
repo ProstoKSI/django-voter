@@ -1,0 +1,49 @@
+.user_rating.with_img {
+    height: 19px;
+    width: 97px;
+}
+.user_rating.with_img.positive {
+    background: url(../img/user_rating/Green_background.png);
+}
+.user_rating.with_img.negative {
+    background: url(../img/user_rating/Red_background.png);
+}
+.user_rating.with_img.default {
+    background: url(../img/user_rating/Empty_rating_None.png);
+}
+
+.user_rating.with_img .img_value {
+    height: 19px;
+}
+.user_rating.with_img.positive .img_value {
+    background: url(../img/user_rating/Full_rating_Green.png);
+}
+.user_rating.with_img.negative .img_value {
+    background: url(../img/user_rating/Full_rating_Red.png);
+}
+
+.user_rating.with_img span {
+    float: left;
+    margin-left: 104px;
+    margin-top: -20px;
+    width: 100px;
+}
+
+.user_rating.positive span {
+/*  
+    color: #DFD;
+    text-shadow: 1px 1px 1px #0A0; */
+    color: #0A0;
+}
+.user_rating.negative span {
+/*
+    color: #FDD;
+    text-shadow: 1px 1px 1px #A00; */
+    color: #A00;
+}
+.user_rating.default span {
+/*
+    color: #DDF;
+    text-shadow: 1px 1px 1px #00A; */
+    color: #00A;
+}

@@ -1,0 +1,76 @@
+.book-rating{
+    margin: -20px 0 -20px -10px;
+}
+.book-rating .voting {
+    background: url(../img/asterics_rating/vote-sprite.gif) repeat-x scroll 0 0 transparent;
+    font-family: Arial,sans-serif;
+    height: 55px;
+    line-height: 1;
+    position: relative;
+    text-align: center;
+    width: 4.5em;
+}
+.book-rating .voting .set_plus, .book-rating .voting .set_minus{
+    cursor: pointer;
+}
+.set_plus{
+    margin-left: 7px;
+}
+.set_minus{
+    margin-left: -2px;
+}
+.separator{
+    margin-left: -2px;
+}
+.book-rating .voting .vote-value {
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 1em;
+    overflow: hidden;
+    position: relative;
+    top: 10px;
+}
+.book-rating .voting .vote-title {
+    color: #808080;
+    font-size: 0.85em;
+    height: 14px;
+    left: 0;
+    line-height: 1em;
+    position: absolute;
+    text-transform: lowercase;
+    top: 40px;
+    width: 100%;
+}
+.book-rating .no_repeat{
+    background-repeat: no-repeat;
+}
+.book-rating .positive-rating-c{
+    color: #628A49;
+    background-position: 0 -336px;
+}
+.book-rating .positive-rating-l{
+    background-position: 0 -392px;
+}
+.book-rating .positive-rating-r{
+    background-position: 100% -448px;
+}
+.book-rating .negative-rating-c{
+    color: #CC3F4F;
+    background-position: 0 -168px;
+}
+.book-rating .negative-rating-l{
+    background-position: 0 -224px;
+}
+.book-rating .negative-rating-r{
+    background-position: 100% -280px;
+}
+.book-rating .neutral-rating-c{
+    color: #808080;
+    background-position: 0 0px;
+}
+.book-rating .default-rating-l{
+    background-position: 0 -56px;
+}
+.book-rating .default-rating-r{
+    background-position: 100% -112px;
+}

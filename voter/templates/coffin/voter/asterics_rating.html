@@ -6,9 +6,9 @@
                 <span class="vote-value">{{ rating }}</span>
                 {% if can_vote %}
                     <span class="vote-title">
-                        <a><img src="{{ STATIC_URL }}ratings/asterics_rating/plus.gif" class="set_plus" title="{% trans "I like it" %}"></a>
-                        <img src="{{ STATIC_URL }}ratings/asterics_rating/separator.gif" class="separator">
-                        <a><img src="{{ STATIC_URL }}ratings/asterics_rating/minus.gif" class="set_minus" title="{% trans "I don't like it" %}"></a>
+                        <a><img src="{{ STATIC_URL }}voter/asterics_rating/plus.gif" class="set_plus" title="{% trans "I like it" %}"></a>
+                        <img src="{{ STATIC_URL }}voter/asterics_rating/separator.gif" class="separator">
+                        <a><img src="{{ STATIC_URL }}voter/asterics_rating/minus.gif" class="set_minus" title="{% trans "I don't like it" %}"></a>
                     </span>
                 {% endif %}
             </div>

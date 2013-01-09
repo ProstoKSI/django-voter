@@ -1,7 +1,7 @@
 from django.core.management.base import NoArgsCommand
 from django.contrib.auth.models import User
 
-from ratings.compute import recompute_ratings
+from voter.compute import recompute_ratings
 
 class Command(NoArgsCommand):
     help = "Recount user ratings"

@@ -1,0 +1,47 @@
+.default_voting {
+    width: 64px;
+    float: right;
+    padding-top: 3px;
+}
+.default_voting .vote-plus, .default_voting .vote-minus {
+    width: 11px;    
+    height: 15px;
+    float: left;
+    margin-top: 2px;
+}
+.default_voting .positive {
+    color: #0A0;
+}
+.default_voting .negative {
+    color: #C00;
+}
+.default_voting .default {
+    color: #999;
+}
+.default_voting .mark {
+    float: left;
+    width: 42px;
+    text-align: center;
+    line-height: 1em;
+    font-size: 15px;
+}
+.default_voting .vote-minus {
+    background: url(../img/default_rating/vote_posts.gif) no-repeat scroll -11px top transparent;
+}
+.default_voting .vote-minus:hover {
+    background: url(../img/default_rating/vote_posts.gif) no-repeat scroll -11px -15px transparent;
+}
+.default_voting .vote-plus {
+    background: url(../img/default_rating/vote_posts.gif) no-repeat scroll 0px top transparent;
+}
+.default_voting .vote-plus:hover {
+    background: url(../img/default_rating/vote_posts.gif) no-repeat scroll 0px -15px transparent;
+}
+.default_voting.disable .vote-minus {
+    background-position: -22px bottom;
+    cursor: default;
+}
+.default_voting.disable .vote-plus {
+    background-position: -22px top;
+    cursor: default;
+}
