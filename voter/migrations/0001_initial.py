@@ -8,47 +8,58 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         
-        # Adding model 'Vote'
-        db.create_table('ratings_vote', (
+        # Adding model 'RatingVote'
+        db.create_table('ratings_ratingvote', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('content_type', self.gf('django.db.models.fields.related.ForeignKey')(related_name='votes', to=orm['contenttypes.ContentType'])),
-            ('object_id', self.gf('django.db.models.fields.PositiveIntegerField')()),
-            ('score', self.gf('django.db.models.fields.IntegerField')()),
-            ('user', self.gf('django.db.models.fields.related.ForeignKey')(blank=True, related_name='poller', null=True, to=orm['auth.User'])),
-            ('date_added', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime.now)),
+            ('user', self.gf('django.db.models.fields.related.ForeignKey')(related_name='rating_vote_list', to=orm['auth.User'])),
+            ('rating', self.gf('django.db.models.fields.related.ForeignKey')(related_name='rating_vote_list', to=orm['voter.Rating'])),
+            ('vote_type', self.gf('django.db.models.fields.IntegerField')(default=0)),
+            ('date', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
         ))
-        db.send_create_signal('voter', ['Vote'])
+        db.send_create_signal('voter', ['RatingVote'])
 
-        # Adding unique constraint on 'Vote', fields ['content_type', 'object_id', 'user']
-        db.create_unique('ratings_vote', ['content_type_id', 'object_id', 'user_id'])
-
-        # Adding model 'Score'
-        db.create_table('ratings_score', (
+        # Adding model 'Rating'
+        db.create_table('ratings_rating', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('content_type', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['contenttypes.ContentType'])),
-            ('object_id', self.gf('django.db.models.fields.PositiveIntegerField')()),
-            ('score', self.gf('django.db.models.fields.IntegerField')()),
-            ('votes', self.gf('django.db.models.fields.PositiveIntegerField')()),
+            ('score', self.gf('django.db.models.fields.FloatField')(default=0)),
+            ('likes', self.gf('django.db.models.fields.IntegerField')(default=0)),
+            ('dislikes', self.gf('django.db.models.fields.IntegerField')(default=0)),
         ))
-        db.send_create_signal('voter', ['Score'])
+        db.send_create_signal('voter', ['Rating'])
 
-        # Adding unique constraint on 'Score', fields ['content_type', 'object_id']
-        db.create_unique('ratings_score', ['content_type_id', 'object_id'])
+        # Adding model 'Badge'
+        db.create_table('ratings_badge', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=50)),
+            ('description', self.gf('django.db.models.fields.CharField')(max_length=255)),
+            ('visible', self.gf('django.db.models.fields.BooleanField')(default=False)),
+            ('rating_weight', self.gf('django.db.models.fields.FloatField')(default=0)),
+            ('rating_bonus', self.gf('django.db.models.fields.FloatField')(default=0)),
+        ))
+        db.send_create_signal('voter', ['Badge'])
+
+        # Adding M2M table for field users on 'Badge'
+        db.create_table('ratings_badge_users', (
+            ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
+            ('badge', models.ForeignKey(orm['voter.badge'], null=False)),
+            ('user', models.ForeignKey(orm['auth.user'], null=False))
+        ))
+        db.create_unique('ratings_badge_users', ['badge_id', 'user_id'])
 
 
     def backwards(self, orm):
         
-        # Removing unique constraint on 'Score', fields ['content_type', 'object_id']
-        db.delete_unique('ratings_score', ['content_type_id', 'object_id'])
+        # Deleting model 'RatingVote'
+        db.delete_table('ratings_ratingvote')
 
-        # Removing unique constraint on 'Vote', fields ['content_type', 'object_id', 'user']
-        db.delete_unique('ratings_vote', ['content_type_id', 'object_id', 'user_id'])
+        # Deleting model 'Rating'
+        db.delete_table('ratings_rating')
 
-        # Deleting model 'Vote'
-        db.delete_table('ratings_vote')
+        # Deleting model 'Badge'
+        db.delete_table('ratings_badge')
 
-        # Deleting model 'Score'
-        db.delete_table('ratings_score')
+        # Removing M2M table for field users on 'Badge'
+        db.delete_table('ratings_badge_users')
 
 
     models = {
@@ -67,7 +78,7 @@ class Migration(SchemaMigration):
         },
         'auth.user': {
             'Meta': {'object_name': 'User'},
-            'date_joined': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
+            'date_joined': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2013, 1, 21, 23, 54, 7, 463958)'}),
             'email': ('django.db.models.fields.EmailField', [], {'max_length': '75', 'blank': 'True'}),
             'first_name': ('django.db.models.fields.CharField', [], {'max_length': '30', 'blank': 'True'}),
             'groups': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['auth.Group']", 'symmetrical': 'False', 'blank': 'True'}),
@@ -75,7 +86,7 @@ class Migration(SchemaMigration):
             'is_active': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
             'is_staff': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'is_superuser': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
-            'last_login': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
+            'last_login': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2013, 1, 21, 23, 54, 7, 463829)'}),
             'last_name': ('django.db.models.fields.CharField', [], {'max_length': '30', 'blank': 'True'}),
             'password': ('django.db.models.fields.CharField', [], {'max_length': '128'}),
             'user_permissions': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['auth.Permission']", 'symmetrical': 'False', 'blank': 'True'}),
@@ -88,22 +99,31 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        'voter.score': {
-            'Meta': {'unique_together': "(('content_type', 'object_id'),)", 'object_name': 'Score'},
-            'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']"}),
+        'voter.badge': {
+            'Meta': {'object_name': 'Badge', 'db_table': "'ratings_badge'"},
+            'description': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'object_id': ('django.db.models.fields.PositiveIntegerField', [], {}),
-            'score': ('django.db.models.fields.IntegerField', [], {}),
-            'votes': ('django.db.models.fields.PositiveIntegerField', [], {})
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
+            'rating_bonus': ('django.db.models.fields.FloatField', [], {'default': '0'}),
+            'rating_weight': ('django.db.models.fields.FloatField', [], {'default': '0'}),
+            'users': ('django.db.models.fields.related.ManyToManyField', [], {'related_name': "'badge_list'", 'symmetrical': 'False', 'to': "orm['auth.User']"}),
+            'visible': ('django.db.models.fields.BooleanField', [], {'default': 'False'})
         },
-        'voter.vote': {
-            'Meta': {'unique_together': "(('content_type', 'object_id', 'user'),)", 'object_name': 'Vote'},
-            'content_type': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'votes'", 'to': "orm['contenttypes.ContentType']"}),
-            'date_added': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
+        'voter.rating': {
+            'Meta': {'object_name': 'Rating', 'db_table': "'ratings_rating'"},
+            'dislikes': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'object_id': ('django.db.models.fields.PositiveIntegerField', [], {}),
-            'score': ('django.db.models.fields.IntegerField', [], {}),
-            'user': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'poller'", 'null': 'True', 'to': "orm['auth.User']"})
+            'likes': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
+            'score': ('django.db.models.fields.FloatField', [], {'default': '0'}),
+            'users': ('django.db.models.fields.related.ManyToManyField', [], {'related_name': "'rating'", 'symmetrical': 'False', 'through': "orm['voter.RatingVote']", 'to': "orm['auth.User']"})
+        },
+        'voter.ratingvote': {
+            'Meta': {'object_name': 'RatingVote', 'db_table': "'ratings_ratingvote'"},
+            'date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'rating': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'rating_vote_list'", 'to': "orm['voter.Rating']"}),
+            'user': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'rating_vote_list'", 'to': "orm['auth.User']"}),
+            'vote_type': ('django.db.models.fields.IntegerField', [], {'default': '0'})
         }
     }
 
