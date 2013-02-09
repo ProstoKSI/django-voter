@@ -22,17 +22,12 @@ class RatingVote(models.Model):
         default=VOTE_LIKE)
     date = models.DateTimeField("Date", auto_now_add=True)
 
-    class Meta:
-        db_table = 'ratings_ratingvote'
 
 class Rating(models.Model):
     score = models.FloatField(_("Score"), default=0)
     likes = models.IntegerField(_("Likes"), default=0)
     dislikes = models.IntegerField(_("Dislikes"), default=0)
     users = models.ManyToManyField(User, through=RatingVote, verbose_name=_("Users"), related_name="rating")
-
-    class Meta:
-        db_table = 'ratings_rating'
 
     def get_objects_name(self):
         try:
@@ -66,8 +61,6 @@ class Badge(models.Model):
     rating_bonus = models.FloatField(_("Rating bonus"), default=0)
     users = models.ManyToManyField(User, verbose_name=_("Users"), related_name="badge_list")
 
-    class Meta:
-        db_table = 'ratings_badge'
 
 def create_rating():
     return Rating.objects.create()

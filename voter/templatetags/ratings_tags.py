@@ -1,43 +1,60 @@
 # -*- coding: utf-8 -*-
-from django import template
 from django.template import Node, Variable, TemplateSyntaxError
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
-try:
+
+if 'coffin' in settings.INSTALLED_APPS:
+    from coffin.template import Library
     from coffin.shortcuts import render_to_string
-except ImportError:
+else:
+    from django.template import Library
     from django.template.loader import render_to_string
 from django.contrib.auth.models import User
 
 from voter.models import Rating, RatingVote
 
-register = template.Library()
+register = Library()
+
+if 'coffin' in settings.INSTALLED_APPS:
+    register.simple_tag = register.object
 
 RATINGS_CONFIG = getattr(settings, "RATINGS_CONFIG", {})
 RATING_TABLE_COUNT = getattr(settings, 'RATING_TABLE_COUNT', 5)
 
+
 @register.simple_tag
-def get_rating_span(obj):
-    rating = str(obj.rating_score)
-    if score > 0:
-        rating += '+'
+def get_rating(obj):
+    rating = '%.1f' % obj.rating_score
+    if obj.rating_score > 0:
+        rating = '+' + rating
         rating_class = "positive"
-    elif score < 0:
+    elif obj.rating_score < 0:
         rating_class = "negative"
     else:
         rating_class = "default"
-    return "<span class=\"" + rating_class + "\">" + rating + "</span>"
+    return rating, rating_class
 
-@register.inclusion_tag('voter//user_rating.html', takes_context=True)
+@register.inclusion_tag('voter/user_rating.html', takes_context=True)
 def get_user_rating_div(context, obj):
-    rating = round(obj.rating_score, 1)
-    if abs(rating) < 2210:
-        context['score'] = abs(int(rating/23))
-    else:
-        context['score'] = 96
-    context['rating'] = rating
+    context['rating'] = get_rating(obj)
     return context
-    
+
+@register.simple_tag
+def can_vote(current_user, owner, rating):
+    # Check if anonymus
+    res = current_user.is_authenticated()
+    # Check if this object owned by current user
+    if res and owner:    
+        # Check, if owner is list, turple, or some other iterable object - to check on all items of it
+        if getattr(owner, '__iter__', False):
+            res = reduce(lambda r, u: r and u != current_user, owner, True)
+        else:
+            res = owner != current_user
+    # Check if already voted
+    if res:
+        res = not RatingVote.objects.filter(rating=rating, user=current_user).exists()
+    return res
+   
 @register.tag
 def render_rating(parser, token):
     bits = token.contents.split(' ')[1:]
@@ -54,33 +71,7 @@ class RenderRatingNode(Node):
         self.obj = Variable(obj)
         self.obj_type = Variable(obj_type)
         self.user = user and Variable(user) or None
-
-    def can_vote(self, current_user, owner, rating):
-        # Check if anonymus
-        res = current_user.is_authenticated()
-        # Check if this object owned by current user
-        if res and owner:    
-            # Check, if owner is list, turple, or some other iterable object - to check on all items of it
-            if getattr(owner, '__iter__', False):
-                res = reduce(lambda r, u: r and u != current_user, owner, True)
-            else:
-                res = owner != current_user
-        # Check if already voted
-        if res:
-            res = not RatingVote.objects.filter(rating=rating, user=current_user).exists()
-        return res
-
-    def get_rating(self, obj):
-        rating = '%.1f' % obj.rating_score
-        if obj.rating_score > 0:
-            rating = '+' + rating
-            rating_class = "positive"
-        elif obj.rating_score < 0:
-            rating_class = "negative"
-        else:
-            rating_class = "default"
-        return rating, rating_class
-        
+       
     def render(self, context, template_name="voter/default_rating.html"):
         obj = self.obj.resolve(context)
         obj_type = self.obj_type.resolve(context)
@@ -88,8 +79,8 @@ class RenderRatingNode(Node):
             user = self.user.resolve(context)
         else:
             user = None
-        can_vote = self.can_vote(context['request'].user, user, obj.rating)
-        rating, rating_class = self.get_rating(obj)
+        can_vote = can_vote(context['request'].user, user, obj.rating)
+        rating, rating_class = get_rating(obj)
         context['rating'] = rating
         context['can_vote'] = can_vote
         context['rating_class'] = rating_class
@@ -98,13 +89,18 @@ class RenderRatingNode(Node):
         
         return render_to_string(template_name, context)
 
+@register.simple_tag
+def get_top_users():
+    return User.objects.order_by('-profile__rating_score')[:RATING_TABLE_COUNT]
+
+@register.simple_tag
+def get_top_books():
+    from poetry.models import Book
+    return Book.objects.order_by('-rating_score')[:RATING_TABLE_COUNT]
 
 @register.inclusion_tag('voter/rating_table.html', takes_context=True)
 def get_rating_table(context):
-    from poetry.models import Book
-    context['top_users'] = User.objects\
-        .order_by('-profile__rating_score')[:RATING_TABLE_COUNT]
-    context['top_books'] = Book.objects\
-        .order_by('-rating_score')[:RATING_TABLE_COUNT]
+    context['top_users'] = get_top_users()
+    context['top_books'] = get_top_books()
     return context
 
