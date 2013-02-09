@@ -21,6 +21,9 @@ class RatingVote(models.Model):
     vote_type = models.IntegerField("Vote type", choices=VOTE_CHOICES, 
         default=VOTE_LIKE)
     date = models.DateTimeField("Date", auto_now_add=True)
+    
+    class Meta:
+        db_table = 'ratings_ratingvote'
 
 
 class Rating(models.Model):
@@ -51,7 +54,10 @@ class Rating(models.Model):
         except ObjectDoesNotExist:
             pass
         return "<No info>"
- 
+
+    class Meta:
+        db_table = 'ratings_rating'
+
 
 class Badge(models.Model):
     name = models.CharField(_("Name"), max_length=50)
@@ -60,6 +66,9 @@ class Badge(models.Model):
     rating_weight = models.FloatField(_("Rating weight"), default=0)
     rating_bonus = models.FloatField(_("Rating bonus"), default=0)
     users = models.ManyToManyField(User, verbose_name=_("Users"), related_name="badge_list")
+
+    class Meta:
+        db_table = 'ratings_badge'
 
 
 def create_rating():
