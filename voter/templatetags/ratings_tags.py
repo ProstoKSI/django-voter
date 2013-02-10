@@ -5,10 +5,18 @@ from django.contrib.contenttypes.models import ContentType
 
 if 'coffin' in settings.INSTALLED_APPS:
     from coffin.template import Library
-    from coffin.shortcuts import render_to_string
 else:
     from django.template import Library
+
+try:
+    # Rating widgets don't depend on other templates, so it's safe to use quite
+    # more fast rendering by jinja2 instead of django's.
+    # In our project we achive 10ms instead of 400ms rendering time on 10 (ten)
+    # renderings ({% render_rating %}).
+    from coffin.shortcuts import render_to_string
+except ImportError:
     from django.template.loader import render_to_string
+
 from django.contrib.auth.models import User
 
 from voter.models import Rating, RatingVote
@@ -79,10 +87,9 @@ class RenderRatingNode(Node):
             user = self.user.resolve(context)
         else:
             user = None
-        can_vote = can_vote(context['request'].user, user, obj.rating)
         rating, rating_class = get_rating(obj)
         context['rating'] = rating
-        context['can_vote'] = can_vote
+        context['can_vote'] = can_vote(context['request'].user, user, obj.rating)
         context['rating_class'] = rating_class
         context['obj_id'] = obj.id
         context['obj_type'] = obj_type
