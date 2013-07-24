@@ -15,6 +15,7 @@ VOTE_CHOICES = (
     (VOTE_DISLIKE, _("Dislike"))
 )
 
+
 class RatingVote(models.Model):
     user = models.ForeignKey(User, related_name="rating_vote_list")
     rating = models.ForeignKey('Rating', related_name="rating_vote_list")
@@ -22,12 +23,26 @@ class RatingVote(models.Model):
         default=VOTE_LIKE)
     date = models.DateTimeField("Date", auto_now_add=True)
 
+    class Meta:
+        verbose_name = _("Rating vote")
+        verbose_name_plural = _("Rating votes")
+
+    def __unicode__(self):
+        return _("Rating vote: %s - %s (at %s)") % (unicode(self.user), unicode(self.rating), unicode(self.date))
+
 
 class Rating(models.Model):
     score = models.FloatField(_("Score"), default=0)
     likes = models.IntegerField(_("Likes"), default=0)
     dislikes = models.IntegerField(_("Dislikes"), default=0)
     users = models.ManyToManyField(User, through=RatingVote, verbose_name=_("Users"), related_name="rating")
+
+    class Meta:
+        verbose_name = _("Rating")
+        verbose_name_plural = _("Ratings")
+
+    def __unicode__(self):
+        return _("Rating: %f (%f / %f)") % (self.score, self.likes, self.dislikes)
 
     def get_objects_name(self):
         try:
