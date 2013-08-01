@@ -2,7 +2,6 @@ import datetime
 
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
-from django.contrib.auth.models import User
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 
@@ -15,9 +14,11 @@ VOTE_CHOICES = (
     (VOTE_DISLIKE, _("Dislike"))
 )
 
+AUTH_USER_MODEL = getattr(settings, 'AUTH_USER_MODEL', 'auth.User')
+
 
 class RatingVote(models.Model):
-    user = models.ForeignKey(User, related_name="rating_vote_list")
+    user = models.ForeignKey(AUTH_USER_MODEL, related_name="rating_vote_list")
     rating = models.ForeignKey('Rating', related_name="rating_vote_list")
     vote_type = models.IntegerField("Vote type", choices=VOTE_CHOICES, 
         default=VOTE_LIKE)
@@ -35,7 +36,7 @@ class Rating(models.Model):
     score = models.FloatField(_("Score"), default=0)
     likes = models.IntegerField(_("Likes"), default=0)
     dislikes = models.IntegerField(_("Dislikes"), default=0)
-    users = models.ManyToManyField(User, through=RatingVote, verbose_name=_("Users"), related_name="rating")
+    users = models.ManyToManyField(AUTH_USER_MODEL, through=RatingVote, verbose_name=_("Users"), related_name="rating_list")
 
     class Meta:
         verbose_name = _("Rating")
@@ -74,7 +75,7 @@ class Badge(models.Model):
     visible = models.BooleanField(_("Visible"), default=False)
     rating_weight = models.FloatField(_("Rating weight"), default=0)
     rating_bonus = models.FloatField(_("Rating bonus"), default=0)
-    users = models.ManyToManyField(User, verbose_name=_("Users"), related_name="badge_list")
+    users = models.ManyToManyField(AUTH_USER_MODEL, verbose_name=_("Users"), related_name="badge_list")
 
 
 def create_rating():

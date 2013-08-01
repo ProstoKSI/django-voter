@@ -17,7 +17,11 @@ try:
 except ImportError:
     from django.template.loader import render_to_string
 
-from django.contrib.auth.models import User
+try:
+    from django.contrib.auth import get_user_model
+    User = get_user_model()
+except ImportError:
+    from django.contrib.auth.models import User
 
 from voter.models import Rating, RatingVote
 
@@ -98,7 +102,7 @@ class RenderRatingNode(Node):
 
 @register.simple_tag
 def get_top_users():
-    return User.objects.order_by('-profile__rating_score')[:RATING_TABLE_COUNT]
+    return User.objects.order_by('-rating_score')[:RATING_TABLE_COUNT]
 
 @register.simple_tag
 def get_top_books():
