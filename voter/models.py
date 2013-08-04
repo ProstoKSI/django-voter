@@ -29,7 +29,11 @@ class RatingVote(models.Model):
         verbose_name_plural = _("Rating votes")
 
     def __unicode__(self):
-        return _("Rating vote: %s - %s (at %s)") % (unicode(self.user), unicode(self.rating), unicode(self.date))
+        return _("Rating vote: %(user)s - %(rating)s (at %(date)s)") % {
+            'user': unicode(self.user), 
+            'rating': unicode(self.rating), 
+            'date': unicode(self.date)
+        }
 
 
 class Rating(models.Model):
@@ -43,7 +47,11 @@ class Rating(models.Model):
         verbose_name_plural = _("Ratings")
 
     def __unicode__(self):
-        return _("Rating: %f (%f / %f)") % (self.score, self.likes, self.dislikes)
+        return _("Rating: %(score)f (%(likes)f / %(dislikes)f)") % {
+            'score': self.score, 
+            'likes': self.likes, 
+            'dislikes': self.dislikes
+        }
 
     def get_objects_name(self):
         try:

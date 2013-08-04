@@ -1,0 +1,2446 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Vlad Frolov <frolvlad@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: escalibro\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-04 21:50+0000\n"
+"PO-Revision-Date: 2013-08-02 04:34+0000\n"
+"Last-Translator: Vlad Frolov <frolvlad@gmail.com>\n"
+"Language-Team: Russian (http://www.transifex.com/projects/p/escalibro/"
+"language/ru/)\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: admin.py:18 models.py:81
+msgid "Name"
+msgstr "Имя"
+
+#: admin.py:31 models.py:46 models.py:93
+#: templates/coffin/voter/user_rating.html:13
+#: templates/django/voter/user_rating.html:13
+msgid "Rating"
+msgstr "Рейтинг"
+
+#: models.py:13
+msgid "Like"
+msgstr ""
+
+#: models.py:14
+msgid "Dislike"
+msgstr ""
+
+#: models.py:28
+msgid "Rating vote"
+msgstr "Голос за рейтинг"
+
+#: models.py:29
+msgid "Rating votes"
+msgstr "Голоса за рейтинг"
+
+#: models.py:32
+#, python-format
+msgid "Rating vote: %(user)s - %(rating)s (at %(date)s)"
+msgstr "Голос за рейтинг: %(user)s - %(rating)s (в %(date)s)"
+
+#: models.py:40
+msgid "Score"
+msgstr ""
+
+#: models.py:41
+msgid "Likes"
+msgstr ""
+
+#: models.py:42
+msgid "Dislikes"
+msgstr ""
+
+#: models.py:43 models.py:86
+msgid "Users"
+msgstr "Пользователи"
+
+#: models.py:47
+msgid "Ratings"
+msgstr "Рейтинг"
+
+#: models.py:50
+#, python-format
+msgid "Rating: %(score)f (%(likes)f / %(dislikes)f)"
+msgstr ""
+
+#: models.py:82
+msgid "Description"
+msgstr "Описание"
+
+#: models.py:83
+#, fuzzy
+msgid "Visible"
+msgstr "Посещений"
+
+#: models.py:84
+msgid "Rating weight"
+msgstr "Вес голоса"
+
+#: models.py:85
+msgid "Rating bonus"
+msgstr "Бонус к рейтингу"
+
+#: views.py:47
+msgid "You already voted"
+msgstr "Вы уже проголосовали"
+
+#: views.py:49 views.py:51
+msgid "You can't vote for this object"
+msgstr "Вы не можете голосовать за этот объект"
+
+#: views.py:57
+msgid "Your vote successfully counted"
+msgstr "Ваш голос учтен"
+
+#: templates/coffin/voter/asterics_rating.html:9
+#: templates/django/voter/asterics_rating.html:9
+msgid "I like it"
+msgstr "Нравится"
+
+#: templates/coffin/voter/asterics_rating.html:11
+#: templates/django/voter/asterics_rating.html:11
+msgid "I don't like it"
+msgstr "Не нравится"
+
+#: templates/coffin/voter/rating_table.html:6
+#: templates/django/voter/rating_table.html:6
+msgid "Top-5 authors"
+msgstr "Топ 5 авторов"
+
+#: templates/coffin/voter/rating_table.html:18
+#: templates/django/voter/rating_table.html:18
+msgid "Top-5 books"
+msgstr "Топ 5 произведений"
+
+#: templates/coffin/voter/rating_table.html:25
+#: templates/django/voter/rating_table.html:25
+msgid "All books"
+msgstr "Все произведения"
+
+#: templates/coffin/voter/rating_table.html:26
+#: templates/django/voter/rating_table.html:26
+msgid "All users"
+msgstr "Все пользователи"
+
+#~ msgid "Email"
+#~ msgstr "Адрес электронной почты"
+
+#~ msgid "Book"
+#~ msgstr "Произведение"
+
+#~ msgid "Post"
+#~ msgstr "Пост"
+
+#~ msgid "White tracery"
+#~ msgstr "Белый ажур"
+
+#~ msgid "Default theme"
+#~ msgstr "Тема по умолчанию"
+
+#~ msgid "Brown"
+#~ msgstr "Коричневое плато"
+
+#~ msgid "Brown default theme"
+#~ msgstr "Коричневая стандартная тема"
+
+#~ msgid "Nostalgic"
+#~ msgstr "Ностальгическая"
+
+#~ msgid "Old nostalgic theme"
+#~ msgstr "Старая ностальгическая тема"
+
+#~ msgid "Old"
+#~ msgstr "Старая"
+
+#~ msgid "Ancient old theme. Only for evaluation puproses!"
+#~ msgstr "Древняя старая тема. Только для ознакомительных целей!"
+
+#~ msgid "Personal info"
+#~ msgstr "Персональная информация"
+
+#~ msgid "Permissions"
+#~ msgstr "Права"
+
+#~ msgid "Important dates"
+#~ msgstr "Важные даты"
+
+#~ msgid "Profile"
+#~ msgstr "Профайл"
+
+#~ msgid "New e-mail"
+#~ msgstr "Новый адрес электронной почты"
+
+#~ msgid ""
+#~ "User with this email already exists. If that is your second account - "
+#~ "please let administation know."
+#~ msgstr ""
+#~ "Пользователь с таким email уже существует. Если это Ваш второй аккаунт - "
+#~ "пожалуйста, сообщите администрации сайта."
+
+#~ msgid "Current Password"
+#~ msgstr "Текущий пароль"
+
+#~ msgid "New Password"
+#~ msgstr "Новый пароль"
+
+#~ msgid "New Password (again)"
+#~ msgstr "Повторить новый пароль"
+
+#~ msgid "Please type your current password."
+#~ msgstr "Пожалуйста, введите текущий пароль."
+
+#~ msgid "You must type the same password each time."
+#~ msgstr "Вы должны указывать один и тот же пароль каждый раз"
+
+#~ msgid "Timezone"
+#~ msgstr "Часовой пояс"
+
+#~ msgid "Username"
+#~ msgstr "Имя пользователя"
+
+#~ msgid "Password"
+#~ msgstr "Пароль"
+
+#~ msgid "Remember Me"
+#~ msgstr "Запомнить меня"
+
+#~ msgid "If checked you will stay logged in for 2 weeks"
+#~ msgstr "Не выходить из системы 2 недели"
+
+#~ msgid "This account is currently inactive."
+#~ msgstr "Эта учетная запись в настоящее время не активна."
+
+#~ msgid "The username and/or password you specified are not correct."
+#~ msgstr "Имя пользователя или/и пароль указан не правильно."
+
+#~ msgid "Password (again)"
+#~ msgstr "Повторите пароль"
+
+#~ msgid "Email (optional)"
+#~ msgstr "Адрес электронной почты (необязательно)"
+
+#~ msgid "Usernames can only contain letters, numbers and underscores."
+#~ msgstr ""
+#~ "Имя пользователя может содержать только латинские буквы, цифры и знаки "
+#~ "подчеркивания."
+
+#~ msgid "This username is already taken. Please choose another."
+#~ msgstr "Это имя пользователя уже занято. Пожалуйста, выберите другое."
+
+#~ msgid ""
+#~ "User with this email already exists. If it's you and you forgot your "
+#~ "password or username - please use \"Forgot password\" to recover your "
+#~ "password."
+#~ msgstr ""
+#~ "Пользователь с таким адресом электронной почты уже существует. Если это "
+#~ "Ваш аккаунт и Вы забыли свой пароль или имя пользователя - пожалуйста, "
+#~ "воспользуйтесь \"Забыли пароль\" что бы их восстановить."
+
+#~ msgid "Confirmation email sent to %(email)s"
+#~ msgstr "Подтверждение cообщение отправленно на %(email)s"
+
+#~ msgid "E-mail"
+#~ msgstr "Адрес электронной почты"
+
+#~ msgid ""
+#~ "There is already an account with such email. If this is your account, "
+#~ "please login with you username and password or use \"Forgot password\" "
+#~ "option to recover your password. You can connect this social account in "
+#~ "\"My Settings\"."
+#~ msgstr ""
+#~ "Уже существует пользователь с таким адресом электронной почты. Если это "
+#~ "Ваша учетная запись, пожалуйста, воспользуйтесь  Вашим именем "
+#~ "пользователем и паролем для авторизации или используйте опцию \"Забыл "
+#~ "пароль\" для восстановления пароля. Вы можете подключить социальные "
+#~ "аккаунты в \"Моих настройках\". "
+
+#~ msgid "Unknown"
+#~ msgstr "Не указан"
+
+#~ msgid "Male"
+#~ msgstr "Мужской"
+
+#~ msgid "Female"
+#~ msgstr "Женский"
+
+#~ msgid "Default"
+#~ msgstr "По умолчанию"
+
+#~ msgid "Continuous"
+#~ msgstr "Полотно"
+
+#~ msgid "Enter a valid username."
+#~ msgstr "Введите правильное имя пользователя"
+
+#~ msgid "First name"
+#~ msgstr "Имя"
+
+#~ msgid "Last name"
+#~ msgstr "Фамилия"
+
+#~ msgid "Staff status"
+#~ msgstr "Статус персонала"
+
+#~ msgid "Is able to access admin zone"
+#~ msgstr "Имеет ли доступ на страницу управления"
+
+#~ msgid "Active"
+#~ msgstr "Активный"
+
+#~ msgid "Date joined"
+#~ msgstr "Дата регистрации"
+
+#~ msgid "timezone"
+#~ msgstr "часовой пояс"
+
+#~ msgid "language"
+#~ msgstr "язык"
+
+#~ msgid "Middle name"
+#~ msgstr "Отчество"
+
+#~ msgid "Email confirmed"
+#~ msgstr "Ваш адрес электронной почты подтверждён"
+
+#~ msgid "Avatar"
+#~ msgstr "Аватар"
+
+#~ msgid "Sex"
+#~ msgstr "Пол"
+
+#~ msgid "Birth date"
+#~ msgstr "Дата рождения"
+
+#~ msgid "Location"
+#~ msgstr "Страна"
+
+#~ msgid "Website"
+#~ msgstr "Веб-сайт"
+
+#~ msgid "Phone"
+#~ msgstr "Телефон"
+
+#~ msgid "Icq"
+#~ msgstr "Icq"
+
+#~ msgid "Jabber"
+#~ msgstr "Jabber"
+
+#~ msgid "Skype"
+#~ msgstr "Skype"
+
+#~ msgid "Google+"
+#~ msgstr "Google+"
+
+#~ msgid "About myself"
+#~ msgstr "О себе"
+
+#~ msgid "Poetry book reader"
+#~ msgstr "Читалка книг"
+
+#~ msgid "Poetry font size"
+#~ msgstr "Размер шрифта"
+
+#~ msgid "User"
+#~ msgstr "Пользователь"
+
+#~ msgid "Confirmation for %(user)s, email - %(email)s"
+#~ msgstr "Подтверждение для %(user)s, email - %(email)s"
+
+#~ msgid "E-mail confirmation"
+#~ msgstr "Подтверждение адреса электронной почты"
+
+#~ msgid "E-mail confirmations"
+#~ msgstr "Подтверждения адресов электронной почты"
+
+#~ msgid "Token"
+#~ msgstr "Ключ"
+
+#~ msgid "Expires"
+#~ msgstr "Истекает"
+
+#~ msgid "Registered"
+#~ msgstr "Зарегестрирован"
+
+#~ msgid "Date"
+#~ msgstr "Дата"
+
+#~ msgid "Success date"
+#~ msgstr "Дата принятия приглашения"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "Birth day"
+#~ msgstr "День рождения"
+
+#~ msgid "About"
+#~ msgstr "О сайте"
+
+#~ msgid "invitation"
+#~ msgstr "приглашение"
+
+#~ msgid "invitations"
+#~ msgstr "приглашения"
+
+#~ msgid "Language updated."
+#~ msgstr "Языб обновлён."
+
+#~ msgid "Information changed."
+#~ msgstr "Информация изменена."
+
+#~ msgid "Information changing failed."
+#~ msgstr "Изменение информации не удалось."
+
+#~ msgid "Contacts changed."
+#~ msgstr "Контакты изменены."
+
+#~ msgid "Contacts changing failed."
+#~ msgstr "Изменение контактной информации не удалось."
+
+#~ msgid "Email changed."
+#~ msgstr "Адрес электронной почты изменён."
+
+#~ msgid "Email changing failed."
+#~ msgstr "Изменить адрес электронной почты не удалось."
+
+#~ msgid "Password changed."
+#~ msgstr "Пароль изменён."
+
+#~ msgid "Password changing failed."
+#~ msgstr "Изменение пароля не удалось."
+
+#~ msgid "Timezone changed."
+#~ msgstr "Часовой пояс изменён."
+
+#~ msgid "Timezone changing failed."
+#~ msgstr "Изменение часового пояса не удалось."
+
+#~ msgid "by rating"
+#~ msgstr "по рейтингу"
+
+#~ msgid "by alphabet (A-Z)"
+#~ msgstr "по алфавиту (А-Я)"
+
+#~ msgid "by alphabet (Z-A)"
+#~ msgstr "по алфавиту (Я-А)"
+
+#~ msgid "by book count"
+#~ msgstr "по количеству произведений"
+
+#~ msgid "by joined date (old-new)"
+#~ msgstr "по дате регистрации (стар-нов)"
+
+#~ msgid "by joined date (new-old)"
+#~ msgstr "по дате регистрации (нов-стар)"
+
+#~ msgid "Author"
+#~ msgstr "Автор"
+
+#~ msgid "Reader"
+#~ msgstr "Читатель"
+
+#~ msgid "Is author"
+#~ msgstr "Является ли автором"
+
+#~ msgid "First letter of username or last name (russian alphabet)"
+#~ msgstr "Первая буква в имени или фамилии пользователя (русский алфавит)"
+
+#~ msgid "First letter of username or last name (english alphabet)"
+#~ msgstr "Первая буква в имени или фамилии пользователя (английский алфавит)"
+
+#~ msgid "Juri desicion"
+#~ msgstr "Решение жюри"
+
+#~ msgid "People, and than juri desicion"
+#~ msgstr "Решение людей, а потом жюри"
+
+#~ msgid "People desicion"
+#~ msgstr "Решение людей"
+
+#~ msgid "Juris"
+#~ msgstr "Жюри"
+
+#~ msgid "You can choose only users that you follow."
+#~ msgstr "Вы можете выбрать только пользователей, на которых подписаны."
+
+#~ msgid "Slug"
+#~ msgstr "Слаг"
+
+#~ msgid "End date for publish"
+#~ msgstr "Последняя дата публикации"
+
+#~ msgid "End date for voting"
+#~ msgstr "Последняя дата для голосования"
+
+#~ msgid "Rules"
+#~ msgstr "Правила"
+
+#~ msgid "Win rule"
+#~ msgstr "Правила выигрыша"
+
+#~ msgid "Votes"
+#~ msgstr "Голоса"
+
+#~ msgid "Status"
+#~ msgstr "Состояние"
+
+#~ msgid "Feed item"
+#~ msgstr "Элемент ленты"
+
+#~ msgid "Feed items"
+#~ msgstr "Элементы ленты"
+
+#~ msgid "%(owner)s's feed contains %(object)s %(date)s"
+#~ msgstr "%(owner)s's лента содержит %(object)s %(date)s"
+
+#~ msgid "Follow group"
+#~ msgstr "Группа подписчиков"
+
+#~ msgid "Follow groups"
+#~ msgstr "Группы подписчиков"
+
+#~ msgid "%(owner)s's group <%(slug)s>"
+#~ msgstr "группа %(owner)s <%(slug)s>"
+
+#~ msgid "Follow item"
+#~ msgstr "Элемент подписки"
+
+#~ msgid "Follow items"
+#~ msgstr "Элементы подписки"
+
+#~ msgid "%(owner)s is following %(object)s"
+#~ msgstr "%(owner)s читает %(object)s"
+
+#~ msgid "Notification type"
+#~ msgstr "Тип уведомления"
+
+#~ msgid "Is read"
+#~ msgstr "Прочитано"
+
+#~ msgid "Notification"
+#~ msgstr "Уведомление"
+
+#~ msgid "Notifications"
+#~ msgstr "Уведомления"
+
+#~ msgid "Is active"
+#~ msgstr "Включён"
+
+#~ msgid "Notification Setting"
+#~ msgstr "Настройка уведомлений"
+
+#~ msgid "Notification Settings"
+#~ msgstr "Настройки уведомлений"
+
+#~ msgid "Books"
+#~ msgstr "Произведения"
+
+#~ msgid "Posts"
+#~ msgstr "Посты"
+
+#~ msgid "Contests"
+#~ msgstr "Конкурсы"
+
+#~ msgid "Notify me by email when someone... writes private message to me"
+#~ msgstr ""
+#~ "Уведомить меня по электронной почте когда кто-то... написал мне приватное "
+#~ "сообщение"
+
+#~ msgid "Notify me by email when someone... comments my book, post or comment"
+#~ msgstr ""
+#~ "Уведомить меня по электронной почте когда кто-то... прокомментировал мою "
+#~ "книгу, пост или комментарий"
+
+#~ msgid "Notify me by email when someone... starts follow me"
+#~ msgstr ""
+#~ "Уведомить меня по электронной почте когда кто-то... подписался на меня"
+
+#~ msgid "Notify me by email when... import finishes"
+#~ msgstr "Уведомить меня по электронной почте когда... закончен импорт"
+
+#~ msgid "Notify me by email when someone... finds new typo"
+#~ msgstr ""
+#~ "Уведомить меня по электронной почте когда кто-то... нашел ошибку или "
+#~ "опечатку"
+
+#~ msgid "Notify me by email when someone... adds me as a co-author"
+#~ msgstr ""
+#~ "Уведомить меня по электронной почте когда кто-то... добавил меня в "
+#~ "соавторы"
+
+#~ msgid ""
+#~ "Notify me by email when someone... adds me as a co-author in book series"
+#~ msgstr ""
+#~ "Уведомить меня по электронной почте когда кто-то... добавил меня в "
+#~ "соавторы серии"
+
+#~ msgid "Send me monthly newsletter"
+#~ msgstr "Отправлять мне ежемесячную рассылку новостей"
+
+#~ msgid "You've just started following %(object)s"
+#~ msgstr "Вы подписались на %(object)s"
+
+#~ msgid "An error occured while following"
+#~ msgstr "Сбой при подпискe"
+
+#~ msgid "You've just unfollowed %(object)s"
+#~ msgstr "Вы отписались от %(object)s"
+
+#~ msgid "An error occured while unfollowing"
+#~ msgstr "Сбой при отмене подписки"
+
+#~ msgid "You've just shared news"
+#~ msgstr "Вы поделились новостью"
+
+#~ msgid "Scan mode"
+#~ msgstr "Режим сканирования"
+
+#~ msgid "One time"
+#~ msgstr "Один раз"
+
+#~ msgid "Many times"
+#~ msgstr "Много раз"
+
+#~ msgid "Done"
+#~ msgstr "Завершено"
+
+#~ msgid "Deleted"
+#~ msgstr "Удален"
+
+#~ msgid "One time & accept"
+#~ msgstr "Один раз & автоматически добавить в чистовики"
+
+#~ msgid "Importer backend"
+#~ msgstr "Вид импорта"
+
+#~ msgid "Check status"
+#~ msgstr "Статус проверки"
+
+#~ msgid "Last check date"
+#~ msgstr "Последняя дата проверки"
+
+#~ msgid "%(owner)s's source %(url)s (%(backend)s / %(status)s)"
+#~ msgstr "Источник %(owner)s %(url)s (%(backend)s / %(status)s)"
+
+#~ msgid "Created"
+#~ msgstr "Создано"
+
+#~ msgid "Approved"
+#~ msgstr "Утверждена"
+
+#~ msgid "Canceled"
+#~ msgstr "Отменено"
+
+#~ msgid "Title"
+#~ msgstr "Название"
+
+#~ msgid "Text"
+#~ msgstr "Текст"
+
+#~ msgid "External URL"
+#~ msgstr "Внешняя URL"
+
+#~ msgid "Genre"
+#~ msgstr "Жанр"
+
+#~ msgid "from %(source)s - %(title)s (%(status)s)"
+#~ msgstr "из %(source)s - %(title)s (%(status)s)"
+
+#~ msgid "Letter sent"
+#~ msgstr "Письмо выслано"
+
+#~ msgid "Already registered"
+#~ msgstr "Уже зарегестрирован"
+
+#~ msgid "Need moderation"
+#~ msgstr "Необходима модерация"
+
+#~ msgid "Failed to send letter"
+#~ msgstr "Ошибка посылки письма"
+
+#~ msgid "Add to my posts"
+#~ msgstr "Добавить в мои посты"
+
+#~ msgid "Add to my books"
+#~ msgstr "Добавить в мои произведения"
+
+#~ msgid "Every day"
+#~ msgstr "Каждый день"
+
+#~ msgid "Every week"
+#~ msgstr "Каждую неделю"
+
+#~ msgid "Every month"
+#~ msgstr "Каждый месяц"
+
+#~ msgid "Monthly newsletters"
+#~ msgstr "Ежемесячная рассылка"
+
+#~ msgid "receiving monthly newsletters with books, posts and discussions"
+#~ msgstr "получение ежемесячной рассылки произведений, постов и обсуждений"
+
+#~ msgid "Read percent"
+#~ msgstr "Процент прочтения"
+
+#~ msgid "Is own book"
+#~ msgstr "Своя книга"
+
+#~ msgid "Content"
+#~ msgstr "Содержание"
+
+#~ msgid "File"
+#~ msgstr "Файл"
+
+#~ msgid "Supported formats: txt, doc, docx, odt"
+#~ msgstr "Поддерживаемые форматы: txt, doc, docx, odt"
+
+#~ msgid "Book with such title already exists."
+#~ msgstr "Произведение с таким названием уже существует."
+
+#~ msgid "You should either upload file or paste content to text box."
+#~ msgstr "Вы должны загрузить файл или вставить текст в редактор."
+
+#~ msgid ""
+#~ "You should paste or input some text to text area or select \"Upload text "
+#~ "from file\"."
+#~ msgstr ""
+#~ "Вы должны вставить или ввести текст в редактор или выбрать \"Загрузить "
+#~ "текст из файла\"."
+
+#~ msgid "You should upload file or select \"Paste or input text\"."
+#~ msgstr "Вы должны загрузить файл или выбрать \"Вставить или ввести текст\"."
+
+#~ msgid "Comment for this update"
+#~ msgstr "Комментарий к обновлению"
+
+#~ msgid "i.e. \"added new chapters 3,4,5\" or \"just fix typos\""
+#~ msgstr ""
+#~ "например, \"добавлены новые главы 3,4,5\" или \"просто исправлены опечатки"
+#~ "\""
+
+#~ msgid "Comment"
+#~ msgstr "Комментарий"
+
+#~ msgid "No users found with this nick."
+#~ msgstr "Пользователей с таким ником не найдено."
+
+#~ msgid "This user already author of this book."
+#~ msgstr "Этот пользователь уже автор этого произведения."
+
+#~ msgid "This user already author of this series."
+#~ msgstr "Этот пользователь уже автор в этой серии."
+
+#~ msgid "Imported from '%(url)s'."
+#~ msgstr "Загружено из '%(url)s'."
+
+#~ msgid "Authors"
+#~ msgstr "Авторы"
+
+#~ msgid "Name "
+#~ msgstr "Название"
+
+#~ msgid "Minimized"
+#~ msgstr "Уменьшено"
+
+#~ msgid "Book Series"
+#~ msgstr "Серия произведений"
+
+#~ msgid "Books Series"
+#~ msgstr "Серии произведений"
+
+#~ msgid "No status"
+#~ msgstr "Без статуса"
+
+#~ msgid "Failed"
+#~ msgstr "Ошибка"
+
+#~ msgid "Book Content"
+#~ msgstr "Содержание произведения"
+
+#~ msgid "Books Contents"
+#~ msgstr "Содержание произведений"
+
+#~ msgid "Content: "
+#~ msgstr "Содержание: "
+
+#~ msgid "Poem"
+#~ msgstr "Поэма"
+
+#~ msgid "Story"
+#~ msgstr "История"
+
+#~ msgid "Novel"
+#~ msgstr "Роман"
+
+#~ msgid "Chapter"
+#~ msgstr "Глава"
+
+#~ msgid "Short story"
+#~ msgstr "Рассказ"
+
+#~ msgid "Storybook"
+#~ msgstr "Сборник рассказов"
+
+#~ msgid "Verse"
+#~ msgstr "Стих"
+
+#~ msgid "Poems book"
+#~ msgstr "Сборник стихов"
+
+#~ msgid "Feature story"
+#~ msgstr "Тематическая история"
+
+#~ msgid "Article"
+#~ msgstr "Статья"
+
+#~ msgid "Monograph"
+#~ msgstr "Монография"
+
+#~ msgid "Reference"
+#~ msgstr "Справочник"
+
+#~ msgid "Song"
+#~ msgstr "Песня"
+
+#~ msgid "Novella"
+#~ msgstr "Новелла"
+
+#~ msgid "Script"
+#~ msgstr "Пьеса"
+
+#~ msgid "Thumbnail"
+#~ msgstr "Миниатюра"
+
+#~ msgid "Interview"
+#~ msgstr "Интервью"
+
+#~ msgid "Other"
+#~ msgstr "Другой"
+
+#~ msgid "Detective"
+#~ msgstr "Детектив"
+
+#~ msgid "Fiction"
+#~ msgstr "Фантастика"
+
+#~ msgid "Fantasy"
+#~ msgstr "Фэнтези"
+
+#~ msgid "Lyrics"
+#~ msgstr "Тексты песен"
+
+#~ msgid "Love story"
+#~ msgstr "Любовная история"
+
+#~ msgid "Humor"
+#~ msgstr "Юмор"
+
+#~ msgid "Fairy tale"
+#~ msgstr "Сказка"
+
+#~ msgid "Mystique"
+#~ msgstr "Неизведанное"
+
+#~ msgid "Alternative history"
+#~ msgstr "Альтернативная история"
+
+#~ msgid "Adventures"
+#~ msgstr "Приключения"
+
+#~ msgid "Cyberpank"
+#~ msgstr "Кибер панк"
+
+#~ msgid "Prose"
+#~ msgstr "Проза"
+
+#~ msgid "Poetic"
+#~ msgstr "Поэзия"
+
+#~ msgid "Memoirs"
+#~ msgstr "Мемуары"
+
+#~ msgid "History"
+#~ msgstr "История"
+
+#~ msgid "Journalism"
+#~ msgstr "Журналистика"
+
+#~ msgid "Events"
+#~ msgstr "События"
+
+#~ msgid "Litobzor"
+#~ msgstr "Литературный обзор"
+
+#~ msgid "Criticism"
+#~ msgstr "Критика"
+
+#~ msgid "Philosophy"
+#~ msgstr "Философия"
+
+#~ msgid "Religion"
+#~ msgstr "Религия"
+
+#~ msgid "Esoterica"
+#~ msgstr "Эзотерика"
+
+#~ msgid "Occultism"
+#~ msgstr "Оккультизм"
+
+#~ msgid "Horror"
+#~ msgstr "Ужасы"
+
+#~ msgid "Politics"
+#~ msgstr "Политика"
+
+#~ msgid "Erotica"
+#~ msgstr "Эротика"
+
+#~ msgid "Science"
+#~ msgstr "Научная"
+
+#~ msgid "Invention"
+#~ msgstr "Изобретения"
+
+#~ msgid "Baikie"
+#~ msgstr "Байки"
+
+#~ msgid "Parodies"
+#~ msgstr "Пародии"
+
+#~ msgid "Translations"
+#~ msgstr "Переводы"
+
+#~ msgid "Dramaturgy"
+#~ msgstr "Драматургия"
+
+#~ msgid "Postmodernism"
+#~ msgstr "Постмодернизм"
+
+#~ msgid "Science fiction"
+#~ msgstr "Научная фантастика"
+
+#~ msgid "Scenario"
+#~ msgstr "Сценарий"
+
+#~ msgid "Fan fiction"
+#~ msgstr "Фанфик"
+
+#~ msgid "Other genre"
+#~ msgstr "Другой жанр"
+
+#~ msgid "Yes"
+#~ msgstr "Да"
+
+#~ msgid "Yes, as long as others share alike"
+#~ msgstr "Да, пока другие распространяют произведение на тех же условиях"
+
+#~ msgid "No"
+#~ msgstr "Нет"
+
+#~ msgid "English"
+#~ msgstr "Английский"
+
+#~ msgid "Russian"
+#~ msgstr "Русский"
+
+#~ msgid "Ukrainian"
+#~ msgstr "Украинский"
+
+#~ msgid "Belarusian"
+#~ msgstr "Белорусский"
+
+#~ msgid "Authors count"
+#~ msgstr "Количество авторов"
+
+#~ msgid "Default author"
+#~ msgstr "Автор по умолчанию"
+
+#~ msgid "Series"
+#~ msgstr "Книжная серия"
+
+#~ msgid "Pages"
+#~ msgstr "Страницы"
+
+#~ msgid "Size"
+#~ msgstr "Размер"
+
+#~ msgid "Create date"
+#~ msgstr "Дата создания"
+
+#~ msgid "Update date"
+#~ msgstr "Дата обновления"
+
+#~ msgid "Annotation to your poetry"
+#~ msgstr "Аннотация к вашему произведению"
+
+#~ msgid "Downloads"
+#~ msgstr "Загрузка"
+
+#~ msgid "Reads count"
+#~ msgstr "Количество прочтений"
+
+#~ msgid "Literature form"
+#~ msgstr "Литературная форма"
+
+#~ msgid "Is this book finished?"
+#~ msgstr "Это произведение завершено?"
+
+#~ msgid "Primary language of the book"
+#~ msgstr "Основной язык этого произведения"
+
+#~ msgid "Allow commercial uses of your work?"
+#~ msgstr "Разрешить коммерческое использование вашей работы?"
+
+#~ msgid "Allow modifications of your work?"
+#~ msgstr "Разрешить другим изменять ваше произведение?"
+
+#~ msgid "Book %(book_name)s from %(series_name)s series"
+#~ msgstr "Произведение %(book_name)s из серии %(series_name)s"
+
+#~ msgid "Book %(book_name)s"
+#~ msgstr "Произведение %(book_name)s"
+
+#~ msgid "Cover path"
+#~ msgstr "Путь к обложке"
+
+#~ msgid "Publisher Book"
+#~ msgstr "Книга издательства"
+
+#~ msgid "Publishers Books"
+#~ msgstr "Книги издательств"
+
+#~ msgid "Published: "
+#~ msgstr "Опубликовано: "
+
+#~ msgid "Path"
+#~ msgstr "Путь"
+
+#~ msgid "Book Image"
+#~ msgstr "Изображение из произведения"
+
+#~ msgid "Books Images"
+#~ msgstr "Изображения из произведений"
+
+#~ msgid "Book image: "
+#~ msgstr "Изображение произведения: "
+
+#~ msgid "I'm reading now"
+#~ msgstr "Я читаю"
+
+#~ msgid "Unfinished books I've read"
+#~ msgstr "Прочитанные черновики"
+
+#~ msgid "Finished books I've read"
+#~ msgstr "Прочитанные завершённые произведения"
+
+#~ msgid "All"
+#~ msgstr "Все"
+
+#~ msgid "Now reading"
+#~ msgstr "Сейчас читает"
+
+#~ msgid "Unfinished books user has read"
+#~ msgstr "Прочитанные черновики"
+
+#~ msgid "Finished books user has read"
+#~ msgstr "Прочитанные завершённые произведения"
+
+#~ msgid "Less 10Kb"
+#~ msgstr "Менее 10Кб"
+
+#~ msgid "10Kb - 100Kb"
+#~ msgstr "10Кб - 100Кб"
+
+#~ msgid "100Kb - 512Kb"
+#~ msgstr "100Кб - 512Кб"
+
+#~ msgid "512Kb - 1Mb"
+#~ msgstr "512Кб - 1Мб"
+
+#~ msgid "More 1Mb"
+#~ msgstr "Более 1Мб"
+
+#~ msgid "by readers count"
+#~ msgstr "по количеству прочтений"
+
+#~ msgid "by last update time"
+#~ msgstr "по дате последнего обновления"
+
+#~ msgid "by size (small-large)"
+#~ msgstr "по размеру (меньшее-большее)"
+
+#~ msgid "by size (large-small)"
+#~ msgstr "по размену (большее-меньшее)"
+
+#~ msgid "Book size"
+#~ msgstr "Объём произведения"
+
+#~ msgid "Book language"
+#~ msgstr "Язык произведения"
+
+#~ msgid "First letter of book name (russian alphabet)"
+#~ msgstr "Первая буква в названии произведения (русский алфавит)"
+
+#~ msgid "First letter of book name (english alphabet)"
+#~ msgstr "Первая буква в названии произведения (английский алфавит)"
+
+#~ msgid "Author reported about the typo."
+#~ msgstr "Автор получил уведомление об опечатке."
+
+#~ msgid "Typo or mistake detected"
+#~ msgstr "Найдена опечатка или ошибка"
+
+#~ msgid "someone have reported about typo or mistake"
+#~ msgstr "кто-то отправил отчёт об опечатке или ошибке"
+
+#~ msgid ""
+#~ "Unknown format or encoding in the file. Let know administrator "
+#~ "(escalibro@gmail.com) about your problem."
+#~ msgstr ""
+#~ "Неизвестный формат или кодировка в файле. Администратор должен знать "
+#~ "(escalibro@gmail.com) о вашей проблеме."
+
+#~ msgid "Manager"
+#~ msgstr "Руководитель"
+
+#~ msgid "Publishers name"
+#~ msgstr "Название издательства"
+
+#~ msgid "Work email"
+#~ msgstr "Рабочий почтовый ящик"
+
+#~ msgid "Telephone number"
+#~ msgstr "Номер телефона"
+
+#~ msgid "Publisher"
+#~ msgstr "Издательство"
+
+#~ msgid "Publishers"
+#~ msgstr "Издательства"
+
+#~ msgid "Tracker"
+#~ msgstr "Трекер"
+
+#~ msgid "Session ID"
+#~ msgstr "Сессия ID"
+
+#~ msgid "IP"
+#~ msgstr "IP"
+
+#~ msgid "User Agent"
+#~ msgstr "User Agent"
+
+#~ msgid "Page URL"
+#~ msgstr "URL страницы"
+
+#~ msgid "ru"
+#~ msgstr "рус"
+
+#~ msgid "en"
+#~ msgstr "англ"
+
+#~ msgid "uk"
+#~ msgstr "укр"
+
+#~ msgid "Language"
+#~ msgstr "Язык"
+
+#~ msgid "Arguments"
+#~ msgstr "Аргументы"
+
+#~ msgid "Referer"
+#~ msgstr "Referer"
+
+#~ msgid "day"
+#~ msgstr "день"
+
+#~ msgid "month"
+#~ msgstr "месяц"
+
+#~ msgid "year"
+#~ msgstr "год"
+
+#~ msgid "Object type"
+#~ msgstr "Тип объекта"
+
+#~ msgid "Object id"
+#~ msgstr "Номер(ID) объекта"
+
+#~ msgid "Type of statistics"
+#~ msgstr "Тип статистики"
+
+#~ msgid "Date of statistics"
+#~ msgstr "Время статистики"
+
+#~ msgid "Number of visits"
+#~ msgstr "Количество визитов"
+
+#~ msgid "Statistics"
+#~ msgstr "Статистика"
+
+#~ msgid "Parent"
+#~ msgstr "Родитель"
+
+#~ msgid "Meta"
+#~ msgstr "Мета"
+
+#~ msgid "comment"
+#~ msgstr "комментарий"
+
+#~ msgid "Public"
+#~ msgstr "Опубликовано"
+
+#~ msgid "Unapproved"
+#~ msgstr "Неутверждено"
+
+#~ msgid "object ID"
+#~ msgstr "Номер(ID) объекта"
+
+#~ msgid "date/time submitted"
+#~ msgstr "дата/время представлен"
+
+#~ msgid "date/time modified"
+#~ msgstr "дата/время изменен"
+
+#~ msgid "date/time approved"
+#~ msgstr "дата/время утвержден"
+
+#~ msgid "status"
+#~ msgstr "статус"
+
+#~ msgid "IP address"
+#~ msgstr "IP адрес"
+
+#~ msgid "Threaded Comment"
+#~ msgstr "Древовидный комментарий"
+
+#~ msgid "Threaded Comments"
+#~ msgstr "Древовидные комментарии"
+
+#~ msgid "Comment received"
+#~ msgstr "Получен комментарий"
+
+#~ msgid "you have received a reply"
+#~ msgstr "вы получили ответ"
+
+#~ msgid "Latest updates"
+#~ msgstr "Последние обновления"
+
+#~ msgid "Current contests"
+#~ msgstr "Текущие конкурсы"
+
+#~ msgid "All contests"
+#~ msgstr "Все конкурсы"
+
+#~ msgid "Latest writings"
+#~ msgstr "Последние произведения"
+
+#~ msgid "All writings"
+#~ msgstr "Все произведения"
+
+#~ msgid "Latest news"
+#~ msgstr "Последние новости"
+
+#~ msgid "All news"
+#~ msgstr "Все новости"
+
+#~ msgid "Latest discussions"
+#~ msgstr "Последние обсуждения"
+
+#~ msgid "All discussions"
+#~ msgstr "Все обсуждения"
+
+#~ msgid "Your works"
+#~ msgstr "Ваши произведения"
+
+#~ msgid "Send message"
+#~ msgstr "Отправить сообщение"
+
+#~ msgid "Unfollow"
+#~ msgstr "Отписаться"
+
+#~ msgid "Follow"
+#~ msgstr "Подписаться"
+
+#~ msgid "Information about user %(display_name)s"
+#~ msgstr "Информация о пользователе %(display_name)s"
+
+#~ msgid "Birthday"
+#~ msgstr "День рождения"
+
+#~ msgid "News"
+#~ msgstr "Новости"
+
+#~ msgid "Works"
+#~ msgstr "Произведения"
+
+#~ msgid "Blog"
+#~ msgstr "Блог"
+
+#~ msgid "Reader room"
+#~ msgstr "Читательский зал"
+
+#~ msgid "Typos"
+#~ msgstr "Опечатки"
+
+#~ msgid "Import"
+#~ msgstr "Импорт"
+
+#~ msgid "Add book"
+#~ msgstr "Добавить произведение"
+
+#~ msgid "Add series"
+#~ msgstr "Добавить серию"
+
+#~ msgid "Main page"
+#~ msgstr "Главная страница"
+
+#~ msgid "Latest poetry"
+#~ msgstr "Последние произведения"
+
+#~ msgid ""
+#~ "books, writers, readers, write book, read book, self publish, show book, "
+#~ "criticize, poetry, prose"
+#~ msgstr ""
+#~ "книги, писатели, читатели, написать книгу, писать книгу, читать книгу, "
+#~ "самопубликация, показать книгу, критиковать, проза, поэзия, стихи"
+
+#~ msgid ""
+#~ "Escalibro is the site service for writing, publishing selfwritten books "
+#~ "and discuss them with readers. We have nice and easy design, reach "
+#~ "functional and great community."
+#~ msgstr ""
+#~ "Escalibro - сайт сервис для написания, публикации собственных "
+#~ "произведений и обсуждения их с читателями. У нас приятный и удобный "
+#~ "дизайн, богатый функционал и отличное сообщество."
+
+#~ msgid "You are using an outdated browser."
+#~ msgstr "Ваш браузер устарел."
+
+#~ msgid "To use all site features, download and install one of these browsers"
+#~ msgstr ""
+#~ "Для использования полного функционала сайта, скачайте один из "
+#~ "предложенных, поддерживаемых браузеров"
+
+#~ msgid "Search"
+#~ msgstr "Поиск"
+
+#~ msgid "Loading..."
+#~ msgstr "Загрузка..."
+
+#~ msgid "Disable tips"
+#~ msgstr "Отключить подсказки"
+
+#~ msgid "Clear filter"
+#~ msgstr "Снять фильтр"
+
+#~ msgid "No users found."
+#~ msgstr "Пользователей не найдено."
+
+#~ msgid "Here is your current avatar:"
+#~ msgstr "Текущий аватар:"
+
+#~ msgid ""
+#~ "Your avatar is currently the one found on <a href='http://www.gravatar."
+#~ "com/'>Gravatar</a>, but you can upload a custom avatar just for this "
+#~ "site! To do so, simply use the form below."
+#~ msgstr ""
+#~ "Ваш аватар найден на <a href='http://www.gravatar.com/'>Gravatar</a>, Вы "
+#~ "можете загрузить новый аватар, воспользовавшись формой, расположенной "
+#~ "ниже."
+
+#~ msgid ""
+#~ "(Custom avatars will not show up unless you have a <a href="
+#~ "\"%(acct_email_url)s\">confirmed email address</a>.)"
+#~ msgstr ""
+#~ "(Ваш аватар не отобразится, если у вас не подтвержден <a href="
+#~ "\"%(acct_email_url)s\">адрес электронной почты</a>.)"
+
+#~ msgid "Select a different avatar:"
+#~ msgstr "Выберите изображение:"
+
+#~ msgid ""
+#~ "Don&rsquo;t like this avatar? You can <a href=\"%(avatar_delete_url)s"
+#~ "\">delete it</a>."
+#~ msgstr ""
+#~ "Не нравится этот аватар? Вы можете <a href=\"%(avatar_delete_url)s"
+#~ "\">удалить его</a>."
+
+#~ msgid "Upload an Avatar:"
+#~ msgstr "Загрузить аватар:"
+
+#~ msgid "Avatar Image"
+#~ msgstr "Аватар"
+
+#~ msgid "Upload New Image"
+#~ msgstr "Загрузить"
+
+#~ msgid ""
+#~ "User '%(user)s' at %(site_name)s has given this as an e-mail address.\n"
+#~ "\n"
+#~ "To confirm this is correct, go to %(activate_url)s\n"
+#~ msgstr ""
+#~ "Пользователь '%(user)s' на %(site_name)s указал данный адресс в качестве "
+#~ "своей электронной почты.\n"
+#~ "\n"
+#~ "Для подтверждения перейдите по ссылке %(activate_url)s\n"
+
+#~ msgid "Confirm e-mail address for %(site_name)s"
+#~ msgstr "Подтверждение адреса электронной почты от %(site_name)s"
+
+#~ msgid "Signup"
+#~ msgstr "Регистрация"
+
+#~ msgid "Sign Up"
+#~ msgstr "Регистрация"
+
+#~ msgid "Already have an account?"
+#~ msgstr "У вас уже есть аккаунт?"
+
+#~ msgid "Log In"
+#~ msgstr "Войти"
+
+#~ msgid "Sign up by invitation"
+#~ msgstr "Зарегистрироваться по приглашению"
+
+#~ msgid "Sign Up &raquo;"
+#~ msgstr "Регистрация &raquo;"
+
+#~ msgid ""
+#~ "By clicking \"Sign Up\", you are indicating that you have read and agree "
+#~ "to the <a href=\"/terms/\">Terms of Use</a> and <a href=\"/privacy/"
+#~ "\">Privacy Policy</a>."
+#~ msgstr ""
+#~ "Нажав кнопку \"Регистрация\", вы подтверждаете, что прочитали и "
+#~ "соглашаетесь с <a href=\"/terms/\">условием использования</a> и <a href="
+#~ "\"/privacy/\">приватности</a>."
+
+#~ msgid ""
+#~ "If you have any trouble creating your account, contact us at <a href="
+#~ "\"mailto:\">escalibro@gmail.com</a>."
+#~ msgstr ""
+#~ "Если вы не можете войти на сайт, свяжитесь с <a href=\"mailto:"
+#~ "escalibro@gmail.com\">escalibro@gmail.com</a>."
+
+#~ msgid "Login"
+#~ msgstr "Войти"
+
+#~ msgid "Note"
+#~ msgstr "Примечание"
+
+#~ msgid "you are already logged in as %(user)s."
+#~ msgstr "вы уже зарегистрированы как %(user)s."
+
+#~ msgid ""
+#~ "Don't have an account? <a href=\"%(signup_url)s?next=%(next)s\">Sign up</"
+#~ "a>!"
+#~ msgstr ""
+#~ "У вас нет учетной записи? <a href=\"%(signup_url)s?next=%(next)s"
+#~ "\">Зарегистрируйтесь</a>!"
+
+#~ msgid "Standard login"
+#~ msgstr "Стандартный вход"
+
+#~ msgid "Log in &raquo;"
+#~ msgstr "Войти &raquo;"
+
+#~ msgid "Forgot password?"
+#~ msgstr "Забыли пароль?"
+
+#~ msgid "Login using social providers"
+#~ msgstr "Войти, используя социальные аккаунты"
+
+#~ msgid ""
+#~ "If you have any trouble logging in to your account, contact us at <a href="
+#~ "\"mailto:escalibro@gmail.com\">escalibro@gmail.com</a>."
+#~ msgstr ""
+#~ "Если вы не можете войти на сайт, свяжитесь с <a href=\"mailto:"
+#~ "escalibro@gmail.com\">escalibro@gmail.com</a>."
+
+#~ msgid "Password reset complete"
+#~ msgstr "Пароль восcтановлен"
+
+#~ msgid "Your password has been set.  You may go ahead and log in now."
+#~ msgstr "Ваш пароль был воcстановлен. Вы можете войти в систему."
+
+#~ msgid "Log in"
+#~ msgstr "Войти"
+
+#~ msgid "Password reset"
+#~ msgstr "Воcстановление пароля"
+
+#~ msgid "Enter new password"
+#~ msgstr "Введите новый пароль"
+
+#~ msgid ""
+#~ "Please enter your new password twice so we can verify you typed it in "
+#~ "correctly."
+#~ msgstr ""
+#~ "Пожалуйста, введите новый пароль дважды, чтобы мы могли удостовериться, "
+#~ "что вы ввели его вправильно."
+
+#~ msgid "Change my password"
+#~ msgstr "Изменить пароль"
+
+#~ msgid "Password reset unsuccessful"
+#~ msgstr "Сброс пароля не осуществлён"
+
+#~ msgid ""
+#~ "The password reset link was invalid, possibly because it has already been "
+#~ "used.  Please request a new password reset."
+#~ msgstr ""
+#~ "Ссылка для смены пароля недействительна, возможно, потому что пароль уже "
+#~ "был восстановлен. Пожалуйста, запросите сброс пароля еще раз на странице "
+#~ "авторизации."
+
+#~ msgid "Password reset successful"
+#~ msgstr "Пароль восстановлен"
+
+#~ msgid ""
+#~ "We've e-mailed you instructions for setting your password to the e-mail "
+#~ "address you submitted. You should be receiving it shortly."
+#~ msgstr ""
+#~ "Мы отправили инструкции по восстановлению пароля на Вашу электронную "
+#~ "почту. Вы должны получить их в ближайшее время."
+
+#~ msgid "You're receiving this e-mail because you requested a password reset"
+#~ msgstr "Вы получили это письмо, потому что вы просили сбросить пароль"
+
+#~ msgid "for your user account at %(site_name)s"
+#~ msgstr "для вашего аккаунта на %(site_name)s"
+
+#~ msgid "Please go to the following page and choose a new password:"
+#~ msgstr "Пожалуйста, перейдите по ссылке и выберите новый пароль:"
+
+#~ msgid "Your username, in case you've forgotten:"
+#~ msgstr "Ваше имя пользователя, в случае если вы его забыли:"
+
+#~ msgid "Thanks for using our site!"
+#~ msgstr "Спасибо за посещение нашего сайта!"
+
+#~ msgid "The %(SITE_DOMAIN)s team"
+#~ msgstr "Команда %(SITE_DOMAIN)s"
+
+#~ msgid ""
+#~ "Forgotten your password? Enter your e-mail address below, and we'll e-"
+#~ "mail instructions for setting a new one."
+#~ msgstr ""
+#~ "Забыли пароль? Введите свой адрес электронной почты, и мы отправим "
+#~ "инструкции по его восстановлению."
+
+#~ msgid "Reset my password"
+#~ msgstr "Восстановить пароль"
+
+#~ msgid "Password reset on %(SITE_DOMAIN)s"
+#~ msgstr "Восстановление пароля на %(SITE_DOMAIN)s"
+
+#~ msgid "Account settings"
+#~ msgstr "Настройки аккаунта"
+
+#~ msgid "General"
+#~ msgstr "Общее"
+
+#~ msgid "Contacts"
+#~ msgstr "Контактная информация"
+
+#~ msgid "Private"
+#~ msgstr "Конфиденциальность"
+
+#~ msgid "Themes"
+#~ msgstr "Темы"
+
+#~ msgid "Update"
+#~ msgstr "Обновить"
+
+#~ msgid "Associate with social providers"
+#~ msgstr "Связать с социальными аккаунтами"
+
+#~ msgid "Change your email"
+#~ msgstr "Изменить адрес электронной почты"
+
+#~ msgid "Current e-mail"
+#~ msgstr "Текущий адрес электронной почты"
+
+#~ msgid "Unconfirmed"
+#~ msgstr "Неподтверженный"
+
+#~ msgid "Send email confirmation"
+#~ msgstr "Послать подтверждение email"
+
+#~ msgid "Confirmed"
+#~ msgstr "Подтвержденный"
+
+#~ msgid "No email"
+#~ msgstr "Нет адреса электронной почты"
+
+#~ msgid "Change your password"
+#~ msgstr "Изменить пароль"
+
+#~ msgid "Change your timezone"
+#~ msgstr "Изменить часовой пояс"
+
+#~ msgid "Standard sign up"
+#~ msgstr "Стандартная регистрация"
+
+#~ msgid "Sign up using social providers"
+#~ msgstr "Регистрация, с использозованием социальных аккаунтов"
+
+#~ msgid "Write post"
+#~ msgstr "Написать пост"
+
+#~ msgid "Posts (compact view)"
+#~ msgstr "Посты (компактный вид)"
+
+#~ msgid "Posts in blog: %(name)s"
+#~ msgstr "Сообщения в блоге: %(name)s"
+
+#~ msgid "All blogs"
+#~ msgstr "Все блоги"
+
+#~ msgid "Blog: %(name)s"
+#~ msgstr "Блог: %(name)s"
+
+#~ msgid "No posts yet."
+#~ msgstr "Постов еще нет."
+
+#~ msgid "Blog name"
+#~ msgstr "Имя блога"
+
+#~ msgid "Posts count"
+#~ msgstr "Количество постов"
+
+#~ msgid "Last post"
+#~ msgstr "Последний пост"
+
+#~ msgid "%(time)s ago"
+#~ msgstr "%(time)s назад"
+
+#~ msgid "No blogs found."
+#~ msgstr "Результатов не найдено."
+
+#~ msgid "Write a blog post"
+#~ msgstr "Написать в блоге"
+
+#~ msgid "Create"
+#~ msgstr "Создать"
+
+#~ msgid "Updated"
+#~ msgstr "Обновлено"
+
+#~ msgid "Actions"
+#~ msgstr "Действия"
+
+#~ msgid "Edit"
+#~ msgstr "Редактировать"
+
+#~ msgid "To drafts"
+#~ msgstr "В черновики"
+
+#~ msgid "Publish"
+#~ msgstr "Опубликовать"
+
+#~ msgid "Delete"
+#~ msgstr "Удалить"
+
+#~ msgid "Blog Post: %(title)s"
+#~ msgstr "Пост в блоге: %(title)s"
+
+#~ msgid "blog post"
+#~ msgstr "пост в блоге"
+
+#~ msgid "All posts"
+#~ msgstr "Все посты"
+
+#~ msgid "Comments:"
+#~ msgstr "Комментарии:"
+
+#~ msgid "Editing the post"
+#~ msgstr "Редактирование поста"
+
+#~ msgid "Draft"
+#~ msgstr "Черновик"
+
+#~ msgid "Comments: %(comments_count)s"
+#~ msgstr "Комментарии: %(comments_count)s"
+
+#~ msgid "Blogs"
+#~ msgstr "Блоги"
+
+#~ msgid "Blog post feed for user %(name)s"
+#~ msgstr "Посты пользователя %(name)s"
+
+#~ msgid ""
+#~ "You have received the reply in post \"%(post_title)s\" from user "
+#~ "%(sender_name)s"
+#~ msgstr ""
+#~ "Вы получили ответ в посте \"%(post_title)s\" от пользователя "
+#~ "%(sender_name)s"
+
+#~ msgid "See comment"
+#~ msgstr "Показать комментарий"
+
+#~ msgid "Escalibro's blog"
+#~ msgstr "Блог Escalibro"
+
+#~ msgid "All rights reserved."
+#~ msgstr "Все права защищены."
+
+#~ msgid "Terms of Service"
+#~ msgstr "Условия использования"
+
+#~ msgid "Privacy"
+#~ msgstr "Приватность"
+
+#~ msgid "FAQ"
+#~ msgstr "FAQ"
+
+#~ msgid "Admin"
+#~ msgstr "Админ"
+
+#~ msgid "My news"
+#~ msgstr "Мои новости"
+
+#~ msgid "My messages"
+#~ msgstr "Мои сообщения"
+
+#~ msgid "Log Out"
+#~ msgstr "Выход"
+
+#~ msgid "Home"
+#~ msgstr "Главная"
+
+#~ msgid "I'm feeling lucky"
+#~ msgstr "Мне повезёт"
+
+#~ msgid "New"
+#~ msgstr "Новое"
+
+#~ msgid "Finished contests"
+#~ msgstr "Завершённые конкурсы"
+
+#~ msgid "My contests"
+#~ msgstr "Мои конкурсы"
+
+#~ msgid "Add contest"
+#~ msgstr "Добавить конкурс"
+
+#~ msgid "Info"
+#~ msgstr "Информация"
+
+#~ msgid "Finished"
+#~ msgstr "Завершено"
+
+#~ msgid "Not finished"
+#~ msgstr "Черновик"
+
+#~ msgid "Vote"
+#~ msgstr "Голосовать"
+
+#~ msgid "Add new contest"
+#~ msgstr "Добавить новый конкурс"
+
+#~ msgid "Add"
+#~ msgstr "Добавить"
+
+#~ msgid "Contest"
+#~ msgstr "Конкурс"
+
+#~ msgid "Publishing to contest finished"
+#~ msgstr "Опубликование произведений в этот конкурс закончено"
+
+#~ msgid "Contest finished"
+#~ msgstr "Конкурс завершен"
+
+#~ msgid "Publish book to contest"
+#~ msgstr "Опубликовать произведение для конкурса"
+
+#~ msgid "Resign"
+#~ msgstr "Отказаться быть жюри"
+
+#~ msgid "Close contest"
+#~ msgstr "Закрыть конкурс"
+
+#~ msgid "Contest owner"
+#~ msgstr "Основатель конкурса"
+
+#~ msgid "Contest juri"
+#~ msgstr "Жюри конкурса"
+
+#~ msgid "Contest votes"
+#~ msgstr "Голосвание конкурса"
+
+#~ msgid "Total votes: %(votes)s"
+#~ msgstr "Общее количество голосов: %(votes)s"
+
+#~ msgid "No finished contests yet."
+#~ msgstr "Завершённых конкурсов еще нет."
+
+#~ msgid "No open contests available."
+#~ msgstr "Конкурсов на текущий момент нет."
+
+#~ msgid "My contest"
+#~ msgstr "Мой конкурс"
+
+#~ msgid "No your contests yet."
+#~ msgstr "Ваших конкурсов ещё нет."
+
+#~ msgid "Your contests"
+#~ msgstr "Ваши конкурсы"
+
+#~ msgid "Contests where you juri"
+#~ msgstr "Конкурсы, где Вы в жюри"
+
+#~ msgid "Contests where you participant"
+#~ msgstr "Конкрусы, в которых вы учавствуете"
+
+#~ msgid "Your email confirmed"
+#~ msgstr "Ваша электронная почта подтверждена"
+
+#~ msgid "Update comment"
+#~ msgstr "Комментарий к обновлению"
+
+#~ msgid "Comment to «%(name)s»"
+#~ msgstr "Комментарий на «%(name)s»"
+
+#~ msgid "Reply"
+#~ msgstr "Ответить"
+
+#~ msgid "by <a href=\"%(poetry_user_works_url)s\">%(name)s</a>"
+#~ msgstr "<a href=\"%(poetry_user_works_url)s\">%(name)s</a>"
+
+#~ msgid "You already shared this news"
+#~ msgstr "Вы уже поделились этой новостью"
+
+#~ msgid "Share news"
+#~ msgstr "Поделиться новостью"
+
+#~ msgid "No news yet."
+#~ msgstr "Новостей ещё нет."
+
+#~ msgid "No such news yet."
+#~ msgstr "Таких новостей ещё нет."
+
+#~ msgid "%(name)s's followers"
+#~ msgstr "Читатели %(name)s"
+
+#~ msgid "Her followers"
+#~ msgstr "На неё подписаны"
+
+#~ msgid "His followers"
+#~ msgstr "На него подписаны"
+
+#~ msgid "Your followers"
+#~ msgstr "На меня подписаны"
+
+#~ msgid "(All)"
+#~ msgstr "(Все)"
+
+#~ msgid "No users yet."
+#~ msgstr "Пользователей еще нет."
+
+#~ msgid "%(name)s's followings"
+#~ msgstr "%(name)s подписан на"
+
+#~ msgid "She follows"
+#~ msgstr "Она подписана на"
+
+#~ msgid "He follows"
+#~ msgstr "Он подписан на"
+
+#~ msgid "I follow"
+#~ msgstr "Я подписан на"
+
+#~ msgid "Users that you following"
+#~ msgstr "Пользователи, на которых вы подписаны"
+
+#~ msgid "Receive notifications"
+#~ msgstr "Получать уведомления"
+
+#~ msgid "Еmail"
+#~ msgstr "Адрес электронной почты"
+
+#~ msgid "change under <a href=\"%(email_url)s\">private settings</a>"
+#~ msgstr ""
+#~ "изменить в <a href=\"%(email_url)s\">настройках конфиденциальности</a>"
+
+#~ msgid ""
+#~ "Your email address have not verified. You can add one by going to <a href="
+#~ "\"%(email_url)s\">private settings</a>."
+#~ msgstr ""
+#~ "Ваш адрес электронной почты не подтверждён. Вы можете добавить его в <a "
+#~ "href=\"%(email_url)s\">настройках конфиденциальности</a>"
+
+#~ msgid "Change"
+#~ msgstr "Изменить"
+
+#~ msgid "Unsubscribe all"
+#~ msgstr "Отказаться от всех уведомлений"
+
+#~ msgid ""
+#~ "If you don't want to receive these emails from Escalibro in the future, "
+#~ "please click here"
+#~ msgstr ""
+#~ "Если вы не желаете более получать эти уведомления от Escalibro в будущем, "
+#~ "пожалуйста, воспользуйтесь ссылкой"
+
+#~ msgid "configure notifications"
+#~ msgstr "настройка уведомлений"
+
+#~ msgid "You have received the following notice from %(SITE_DOMAIN)s:"
+#~ msgstr "Вы получили уведомление от %(SITE_DOMAIN)s:"
+
+#~ msgid ""
+#~ "You were added as a co-author for the book \"<a href=\"https://"
+#~ "%(SITE_DOMAIN)s%(book_url)s\">%(book_name)s</a>\""
+#~ msgstr ""
+#~ "Вы добавлены как соавтор в произведение \"<a href=\"https://"
+#~ "%(SITE_DOMAIN)s%(book_url)s\">%(book_name)s</a>\""
+
+#~ msgid "Other authors of the book are:"
+#~ msgstr "Другие авторы этого произведения:"
+
+#~ msgid "Author of the book is"
+#~ msgstr "Автор этого произведения"
+
+#~ msgid "You were added as a co-author for the book \"%(book_name)s\""
+#~ msgstr "Вас добавили соавтором в произведение \"%(book_name)s\""
+
+#~ msgid "You were added as a co-author for book \"%(book_name)s\""
+#~ msgstr "Вас пригласили быть соавтором для произведения \"%(book_name)s\""
+
+#~ msgid "New comment from user %(username)s"
+#~ msgstr "Новый комментарий от %(username)s"
+
+#~ msgid ""
+#~ "<a href=\"%(follower_profile_url)s\">%(follower_name)s</a> follows you "
+#~ "now. "
+#~ msgstr ""
+#~ "<a href=\"%(follower_profile_url)s\">%(follower_name)s</a> подписалась на "
+#~ "вас."
+
+#~ msgid ""
+#~ "<a href=\"%(follower_profile_url)s\">%(follower_name)s</a> follows you "
+#~ "now."
+#~ msgstr ""
+#~ "<a href=\"%(follower_profile_url)s\">%(follower_name)s</a> подписался на "
+#~ "вас."
+
+#~ msgid "You already follows her."
+#~ msgstr "Вы уже подписаны на неё."
+
+#~ msgid "You already follows him."
+#~ msgstr "Вы уже подписаны на него."
+
+#~ msgid "Follow her as well"
+#~ msgstr "Подписаться на неё"
+
+#~ msgid "Follow him as well"
+#~ msgstr "Подписаться на него"
+
+#~ msgid "%(follower_name)s follows you now. "
+#~ msgstr "%(follower_name)s подписалась на вас."
+
+#~ msgid "%(follower_name)s follows you now."
+#~ msgstr "%(follower_name)s подписался на вас."
+
+#~ msgid "You have a new follower"
+#~ msgstr "У вас новый подписчик"
+
+#~ msgid ""
+#~ "Your import from '%(importer_source_url)s' is done. Checkout new items at "
+#~ "<a href=\"https://%(SITE_DOMAIN)s%(importer_url)s\">importer page</a> and "
+#~ "decide which one is a book or a post."
+#~ msgstr ""
+#~ "Ваш импорт из '%(importer_source_url)s' завершён. Проверьте новые "
+#~ "элементы на <a href=\"https://%(SITE_DOMAIN)s%(importer_url)s\">странице "
+#~ "импорта</a> и решите что является произведением, а что постом."
+
+#~ msgid ""
+#~ "Your import from '%(importer_source_url)s' is done. Checkout new items at "
+#~ "importer page - https://%(SITE_DOMAIN)s%(importer_url)s , and decide "
+#~ "which one is a book or a post."
+#~ msgstr ""
+#~ "Ваш импорт из '%(importer_source_url)s' завершён. Проверьте новые "
+#~ "элементы на странице импорта - https://%(SITE_DOMAIN)s%(importer_url)s , "
+#~ "и решите что является произведением, а что постом."
+
+#~ msgid "Import is done"
+#~ msgstr "Импорт закончен"
+
+#~ msgid "<a href=\"%(sender_profile_url)s\">%(sender_name)s</a> wrote: "
+#~ msgstr "<a href=\"%(sender_profile_url)s\">%(sender_name)s</a> написала:"
+
+#~ msgid "<a href=\"%(sender_profile_url)s\">%(sender_name)s</a> wrote:"
+#~ msgstr "<a href=\"%(sender_profile_url)s\">%(sender_name)s</a> написал:"
+
+#~ msgid "%(sender_name)s wrote: "
+#~ msgstr "%(sender_name)s написала:"
+
+#~ msgid "%(sender_name)s wrote:"
+#~ msgstr "%(sender_name)s написал:"
+
+#~ msgid "New private message from %(sender_name)s"
+#~ msgstr "Новое личное сообщение от %(sender_name)s"
+
+#~ msgid ""
+#~ "You were added as a co-author for the series \"%(book_series_name)s\""
+#~ msgstr "Вас добавили соавтором серии \"%(book_series_name)s\""
+
+#~ msgid "You were added as a co-author for the series \"%(bookseries_name)s\""
+#~ msgstr "Вас пригласили быть соавтором серии \"%(bookseries_name)s\""
+
+#~ msgid ""
+#~ "Typo or mistake was detected in the book \"<a href=\"https://"
+#~ "%(SITE_DOMAIN)s%(book_url)s\">%(book_name)s</a>\"."
+#~ msgstr ""
+#~ "Опечатка или ошибка была обнаружена в произведении \"<a href=\"https://"
+#~ "%(SITE_DOMAIN)s%(book_url)s\">%(book_name)s</a>\"."
+
+#~ msgid "Selected text"
+#~ msgstr "Выделенный текст"
+
+#~ msgid "All typos"
+#~ msgstr "Все опечатки"
+
+#~ msgid "Typo reported in the book \"%(book_name)s\""
+#~ msgstr "Обнаружена опечатка в произведении \"%(book_name)s\""
+
+#~ msgid "Adding an importer source"
+#~ msgstr "Добавление источника импорта"
+
+#~ msgid "Adding a source"
+#~ msgstr "Добавление источника"
+
+#~ msgid "Imported items"
+#~ msgstr "Загруженные элементы"
+
+#~ msgid "Sources"
+#~ msgstr "Источники"
+
+#~ msgid "Add source"
+#~ msgstr "Добавить источник"
+
+#~ msgid "Editing the '%(source_url)s' source"
+#~ msgstr "Редактирование источника '%(source_url)s'"
+
+#~ msgid "Editing the source"
+#~ msgstr "Редактирование источника"
+
+#~ msgid "Save"
+#~ msgstr "Сохранить"
+
+#~ msgid "Not import"
+#~ msgstr "Не импортировать"
+
+#~ msgid "No items yet."
+#~ msgstr "Элементов ещё нет."
+
+#~ msgid "Importer sources"
+#~ msgstr "Источники для загрузки"
+
+#~ msgid "No sources yet."
+#~ msgstr "Источников ещё нет."
+
+#~ msgid "%(time)s left"
+#~ msgstr "%(time)s осталось"
+
+#~ msgid "Last step of registration"
+#~ msgstr "Последний шаг регистрации"
+
+#~ msgid "Registration"
+#~ msgstr "Регистрация"
+
+#~ msgid "Submit"
+#~ msgstr "Отправить"
+
+#~ msgid "Registration on %(domain)s"
+#~ msgstr "Регистрация на %(domain)s"
+
+#~ msgid "Thanks for registration on %(domain)s"
+#~ msgstr "Спасибо за регистрацию на %(domain)s"
+
+#~ msgid "Please use following link to activate your account: %(url)s"
+#~ msgstr ""
+#~ "Пожалуйста, воспользуйтесь ссылкой для активации вашего аккаунта: %(url)s"
+
+#~ msgid "Random works"
+#~ msgstr "Случайные произведения"
+
+#~ msgid "Commented works"
+#~ msgstr "Комментируемые произведения"
+
+#~ msgid "Top month works"
+#~ msgstr "ТОП произведений за месяц"
+
+#~ msgid "Month Escalibro news"
+#~ msgstr "Новости месяца Escalibro"
+
+#~ msgid "Hello, %(name)s, here you may read news this month from Escalibro."
+#~ msgstr ""
+#~ "Здравствуйте, %(name)s, здесь мы собрали новости Escalibro этого месяца."
+
+#~ msgid "Escalibro news"
+#~ msgstr "Новости Escalibro"
+
+#~ msgid ""
+#~ "Hello, %(username)s, here you can read latest news from Escalibro this "
+#~ "month."
+#~ msgstr ""
+#~ "Здравствуйте, %(username)s, здесь Вы можете прочесть последние новости "
+#~ "Escalibro за этот месяц."
+
+#~ msgid "Previous page"
+#~ msgstr "Предыдущая страница"
+
+#~ msgid "previous"
+#~ msgstr "предыдущая"
+
+#~ msgid "Next page"
+#~ msgstr "Следующая страница"
+
+#~ msgid "next"
+#~ msgstr "следующая"
+
+#~ msgid "No books found"
+#~ msgstr "Произведения не найдены."
+
+#~ msgid "Edit book content"
+#~ msgstr "Изменить содержание произведения"
+
+#~ msgid "Load book content"
+#~ msgstr "Загрузка содержимого произведения"
+
+#~ msgid "Invite co-author"
+#~ msgstr "Пригласить соавтором"
+
+#~ msgid "No description"
+#~ msgstr "Нет описания"
+
+#~ msgid "Read progress"
+#~ msgstr "Прогресс чтения"
+
+#~ msgid "Already read"
+#~ msgstr "Прочитал"
+
+#~ msgid "Don't want read"
+#~ msgstr "Не хочу читать"
+
+#~ msgid "Want to read"
+#~ msgstr "Хочу прочитать"
+
+#~ msgid "Create new book"
+#~ msgstr "Создать новое произведение"
+
+#~ msgid "Paste or input text"
+#~ msgstr "Вставить или ввести текст"
+
+#~ msgid "or"
+#~ msgstr "или"
+
+#~ msgid "Upload text from file"
+#~ msgstr "Загрузить текст из файла"
+
+#~ msgid "Create new series"
+#~ msgstr "Создать новую серию"
+
+#~ msgid "Editing info of the book «%(name)s»"
+#~ msgstr "Редактирование информации произведения «%(name)s»"
+
+#~ msgid "Your Profile"
+#~ msgstr "Ваш профайл"
+
+#~ msgid "Editing the book"
+#~ msgstr "Редактирование произведения"
+
+#~ msgid "Editing content for «%(name)s»"
+#~ msgstr "Редактирование содержания произведения «%(name)s»"
+
+#~ msgid "Editing book content"
+#~ msgstr "Редактирование содержания произведения"
+
+#~ msgid "Edit series «%(name)s»"
+#~ msgstr "Редактировать серию «%(name)s»"
+
+#~ msgid "Do you want to report the typo?"
+#~ msgstr "Вы хотите сообщить об опечатке?"
+
+#~ msgid "Cancel"
+#~ msgstr "Отмена"
+
+#~ msgid "Information"
+#~ msgstr "Информация"
+
+#~ msgid "Book info"
+#~ msgstr "Информация о произведении"
+
+#~ msgid "author"
+#~ msgstr "автор"
+
+#~ msgid "Read book"
+#~ msgstr "Читать произведение"
+
+#~ msgid "Edit information"
+#~ msgstr "Редактировать информацию"
+
+#~ msgid "Book's language"
+#~ msgstr "Язык произведения"
+
+#~ msgid "License"
+#~ msgstr "Лицензия"
+
+#~ msgid "Download"
+#~ msgstr "Скачать"
+
+#~ msgid "Invite co-author to %(name)s"
+#~ msgstr "Пригласить соавтора для %(name)s"
+
+#~ msgid "Invite"
+#~ msgstr "Пригласить"
+
+#~ msgid "Invite co-author to write in series «%(name)s»"
+#~ msgstr "Пригласить соавтора для написания в серии «%(name)s»"
+
+#~ msgid "Load content for «%(name)s»"
+#~ msgstr "Загрузка содержимого для «%(name)s»"
+
+#~ msgid "Are you sure you want to delete book \"%(name)s\"?"
+#~ msgstr "Вы уверены, что хотите удалить произведение \"%(name)s\"?"
+
+#~ msgid "Are you sure you want to delete series: \"%(name)s\"?"
+#~ msgstr "Вы уверены, что хотите удалить серию: \"%(name)s\"?"
+
+#~ msgid "Read"
+#~ msgstr "Читать"
+
+#~ msgid "Toggle reader mode"
+#~ msgstr "Переключить режим чтения"
+
+#~ msgid "Change the number of lines per page"
+#~ msgstr "Изменить количество строк на странице"
+
+#~ msgid "Decrease the number of lines per page"
+#~ msgstr "Уменьшить количество строк на странице"
+
+#~ msgid "Increase the number of lines per page"
+#~ msgstr "Увеличить количество строк на странице"
+
+#~ msgid "If you found typo or mistake, select text and press Ctrl+Enter"
+#~ msgstr ""
+#~ "Если Вы нашли опечатку или ошибку, выделите текст и нажмите Ctrl+Enter"
+
+#~ msgid "No content"
+#~ msgstr "Нет содержания"
+
+#~ msgid "Comment or set rating"
+#~ msgstr "Комментировать или голосовать"
+
+#~ msgid ""
+#~ "Page <input class=\"book_page_number\" value=\"1\"> of <span class="
+#~ "\"book_pages_count\"></span>"
+#~ msgstr ""
+#~ "Страница <input class=\"book_page_number\" value=\"1\"> из <span class="
+#~ "\"book_pages_count\"></span>"
+
+#~ msgid "%(name)s isn't reading books now."
+#~ msgstr "%(name)s не читает ни одного произведения сейчас."
+
+#~ msgid "%(name)s hasn't read books yet. "
+#~ msgstr "%(name)s ещё не читала произведения."
+
+#~ msgid "%(name)s hasn't read books yet."
+#~ msgstr "%(name)s ещё не читал ни одного произведвения."
+
+#~ msgid "My typos"
+#~ msgstr "Мои опечатки"
+
+#~ msgid "No typos yet."
+#~ msgstr "Опечаток еще нет."
+
+#~ msgid "You haven't added books yet."
+#~ msgstr "Вы ещё не добавили произведения."
+
+#~ msgid "Author haven't added books yet. "
+#~ msgstr "Автор ещё не добавила произведений."
+
+#~ msgid "Author haven't added books yet."
+#~ msgstr "Автор ещё не добавил произведения."
+
+#~ msgid "Series %(name)s"
+#~ msgstr "Серия: %(name)s"
+
+#~ msgid ""
+#~ "You have received the reply in the book \"%(book_name)s\" from user "
+#~ "%(sender_name)s."
+#~ msgstr ""
+#~ "У вас появился новый комментарий в произведении \"%(book_name)s\" от "
+#~ "пользователя %(sender_name)s."
+
+#~ msgid "Archived Messages"
+#~ msgstr "Архивированные сообщения"
+
+#~ msgid ""
+#~ "Messages in this folder will never be removed. You can use this folder "
+#~ "for long term storage."
+#~ msgstr ""
+#~ "Сообщения в этой папке никогда не будут удалены. Вы можете использовать "
+#~ "эту папку как длительное хранилище сообщений."
+
+#~ msgid "Messaging"
+#~ msgstr "Обмен сообщениями"
+
+#~ msgid "Compose"
+#~ msgstr "Написать"
+
+#~ msgid "Inbox"
+#~ msgstr "Входящие"
+
+#~ msgid "Sent"
+#~ msgstr "Отправлено"
+
+#~ msgid "Archives"
+#~ msgstr "Архивы"
+
+#~ msgid "Trash"
+#~ msgstr "Удалённые"
+
+#~ msgid "Sorry, this page number is invalid."
+#~ msgstr "Извините, страницы с таким номером не существует."
+
+#~ msgid "by conversation"
+#~ msgstr "по беседам"
+
+#~ msgid "by message"
+#~ msgstr "по сообщениям"
+
+#~ msgid "Sender"
+#~ msgstr "Отправитель"
+
+#~ msgid "Recipient"
+#~ msgstr "Получатель"
+
+#~ msgid "Subject"
+#~ msgstr "Тема"
+
+#~ msgid "Archive"
+#~ msgstr "Архивировать"
+
+#~ msgid "Undelete"
+#~ msgstr "Восстановить"
+
+#~ msgid "No messages."
+#~ msgstr "Сообщений нет."
+
+#~ msgid "Send"
+#~ msgstr "Отправить"
+
+#~ msgid "Received Messages"
+#~ msgstr "Полученные сообщения"
+
+#~ msgid "Received"
+#~ msgstr "Получено"
+
+#~ msgid "Sent Messages"
+#~ msgstr "Отправленные сообщения"
+
+#~ msgid "Deleted Messages"
+#~ msgstr "Удаленные сообщения"
+
+#~ msgid ""
+#~ "Messages in this folder can be removed from time to time. For long term "
+#~ "storage, use instead the archive folder."
+#~ msgstr ""
+#~ "Сообщения в этой папке могут быть удалены время от времени. Для "
+#~ "длительного хранения сообщения используйте архив."
+
+#~ msgid "Conversation"
+#~ msgstr "Беседа"
+
+#~ msgid "Message"
+#~ msgstr "Сообщение"
+
+#~ msgid "Rejected"
+#~ msgstr "Отклонено"
+
+#~ msgid "Write"
+#~ msgstr "Написать"
+
+#~ msgid "All publishers"
+#~ msgstr "Все издательства"
+
+#~ msgid "Edit publisher"
+#~ msgstr "Редактировать издательство"
+
+#~ msgid "Head"
+#~ msgstr "Руководитель"
+
+#~ msgid "e-mail"
+#~ msgstr "Почтовый ящик"
+
+#~ msgid "Number phone"
+#~ msgstr "Номер телефона"
+
+#~ msgid "Web-site"
+#~ msgstr "Веб-сайт"
+
+#~ msgid "Editing publisher"
+#~ msgstr "Редактирование издательства"
+
+#~ msgid "No publishers found."
+#~ msgstr "Издательств не найдено."
+
+#~ msgid "No results found."
+#~ msgstr "Результатов не найдено."
+
+#~ msgid "Sort"
+#~ msgstr "Сортировка"
+
+#~ msgid "Change theme"
+#~ msgstr "Изменить тему"
+
+#~ msgid "Set theme"
+#~ msgstr "Установить тему"
+
+#~ msgid "Current theme"
+#~ msgstr "Текущая тема"
+
+#~ msgid "Link to comment"
+#~ msgstr "Ссылка на комментарий"
+
+#~ msgid "Comment is deleted or unapproved."
+#~ msgstr "Комментарий удален или не утвержден."
+
+#~ msgid "Restore"
+#~ msgstr "Восстановить"
+
+#~ msgid "No comments found"
+#~ msgstr "Обсуждений не найдено"
+
+#~ msgid "Leave comment"
+#~ msgstr "Оставить комментарий"
+
+#~ msgid ""
+#~ "\n"
+#~ "                Please <a href=\"%(login_url)s?next=%(path)s\">Login</a> "
+#~ "(or <a href=\"%(signup_url)s?next=%(path)s\">Sign Up</a>) to leave a "
+#~ "comment\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "            Пожалуйста <a href=\"%(login_url)s?next=%(path)s\">Войдите</"
+#~ "a> (или <a href=\"%(signup_url)s?next=%(path)s\">Зарегистрируйтесь</a>), "
+#~ "чтобы оставить свой комментарий\n"
+#~ "        "
