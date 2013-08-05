@@ -32,11 +32,11 @@ msgstr "Рейтинг"
 
 #: models.py:13
 msgid "Like"
-msgstr ""
+msgstr "Нравится"
 
 #: models.py:14
 msgid "Dislike"
-msgstr ""
+msgstr "Не нравится"
 
 #: models.py:28
 msgid "Rating vote"
@@ -53,15 +53,15 @@ msgstr "Голос за рейтинг: %(user)s - %(rating)s (в %(date)s)"
 
 #: models.py:40
 msgid "Score"
-msgstr ""
+msgstr "Рейтинг"
 
 #: models.py:41
 msgid "Likes"
-msgstr ""
+msgstr "Нравится"
 
 #: models.py:42
 msgid "Dislikes"
-msgstr ""
+msgstr "Не нравится"
 
 #: models.py:43 models.py:86
 msgid "Users"
@@ -69,21 +69,20 @@ msgstr "Пользователи"
 
 #: models.py:47
 msgid "Ratings"
-msgstr "Рейтинг"
+msgstr "Рейтинги"
 
 #: models.py:50
 #, python-format
 msgid "Rating: %(score)f (%(likes)f / %(dislikes)f)"
-msgstr ""
+msgstr "Рейтинг: %(score)f (%(likes)f / %(dislikes)f)"
 
 #: models.py:82
 msgid "Description"
 msgstr "Описание"
 
 #: models.py:83
-#, fuzzy
 msgid "Visible"
-msgstr "Посещений"
+msgstr "Показывать"
 
 #: models.py:84
 msgid "Rating weight"

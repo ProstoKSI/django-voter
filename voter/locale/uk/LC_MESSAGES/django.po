@@ -57,20 +57,19 @@ msgstr ""
 
 #: models.py:41
 msgid "Likes"
-msgstr ""
+msgstr "Подобається"
 
 #: models.py:42
 msgid "Dislikes"
-msgstr ""
+msgstr "Не подобається"
 
 #: models.py:43 models.py:86
 msgid "Users"
 msgstr "Користувачі"
 
 #: models.py:47
-#, fuzzy
 msgid "Ratings"
-msgstr "Рейтинг"
+msgstr "Рейтинги"
 
 #: models.py:50
 #, python-format
@@ -82,19 +81,16 @@ msgid "Description"
 msgstr "Опис"
 
 #: models.py:83
-#, fuzzy
 msgid "Visible"
-msgstr "Відвідувань"
+msgstr "Відоброжати"
 
 #: models.py:84
-#, fuzzy
 msgid "Rating weight"
-msgstr "Рейтингова оцінка"
+msgstr "Ваговий коефіціент"
 
 #: models.py:85
-#, fuzzy
 msgid "Rating bonus"
-msgstr "Рейтингова оцінка"
+msgstr "Рейтинговий бонус"
 
 #: views.py:47
 msgid "You already voted"
