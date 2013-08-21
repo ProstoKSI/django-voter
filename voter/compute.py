@@ -1,6 +1,10 @@
 from math import log, pow
 
-from django.contrib.auth.models import User
+try:
+    from django.contrib.auth import get_user_model
+    User = get_user_model()
+except ImportError:
+    from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.db.models import Q, Max
 from voter.models import Rating, Badge, RatingVote, VOTE_LIKE, VOTE_DISLIKE
