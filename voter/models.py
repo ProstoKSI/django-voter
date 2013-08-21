@@ -47,7 +47,7 @@ class Rating(models.Model):
         verbose_name_plural = _("Ratings")
 
     def __unicode__(self):
-        return _("Rating: %(score)f (%(likes)f / %(dislikes)f)") % {
+        return _("Rating: %(score)f (%(likes)d / %(dislikes)d)") % {
             'score': self.score, 
             'likes': self.likes, 
             'dislikes': self.dislikes
