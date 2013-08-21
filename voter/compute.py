@@ -82,10 +82,10 @@ def compute_user_rating(user):
     badge = get_user_badge(user)
     score += badge['rating_bonus']
 
-    user.profile.rating.score = score
-    user.profile.rating.save()
-    user.profile.rating_score = user.profile.rating.score
-    user.profile.save()
+    user.rating.score = score
+    user.rating.save()
+    user.rating_score = user.profile.rating.score
+    user.save()
 
 def recompute_obj_ratings(model, func):
     print("Computing ratings for %s" % str(model))
@@ -106,5 +106,5 @@ def recompute_ratings(obj_type='all'):
     if obj_type in ('comment', 'all'):
         recompute_obj_ratings(ThreadedComment, compute_comment_rating)
     if obj_type in ('user', 'all'):
-        recompute_obj_ratings(User, compute_user_rating)   
+        recompute_obj_ratings(User, compute_user_rating)
 
