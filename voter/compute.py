@@ -84,7 +84,7 @@ def compute_user_rating(user):
 
     user.rating.score = score
     user.rating.save()
-    user.rating_score = user.profile.rating.score
+    user.rating_score = score
     user.save()
 
 def recompute_obj_ratings(model, func):
