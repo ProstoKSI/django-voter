@@ -4,6 +4,7 @@ from voter.models import Rating, RatingVote, Badge
 
 
 class RatingVoteInline(admin.TabularInline):
+    raw_id_fields = ('user', 'rating', )
     model = RatingVote
 
 
@@ -25,6 +26,7 @@ class BadgeAdmin(admin.ModelAdmin):
 
 class RatingVoteAdmin(admin.ModelAdmin):
     list_display = ('user', 'get_rating', 'vote_type')
+    raw_id_fields = ('user', 'rating', )
 
     def get_rating(self, vote):
         return vote.rating.get_objects_name()

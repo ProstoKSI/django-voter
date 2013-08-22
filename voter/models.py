@@ -56,7 +56,7 @@ class Rating(models.Model):
     def get_objects_name(self):
         try:
             profile = self.profile_list
-            return "User: %s" % profile.user.username
+            return "User: %s" % profile.username
         except ObjectDoesNotExist:
             pass
         try:
