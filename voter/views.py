@@ -24,10 +24,10 @@ def set_dislike(request, obj_type, obj_id):
 def set_rating(request, obj_type, obj_id, vote_type):
     error = ""
     if obj_type in RATINGS_CONFIG:
-        class_name = RATINGS_CONFIG[obj_type]['class']
-        class_object = str_to_class(class_name)
+        model_name = RATINGS_CONFIG[obj_type]['model']
+        model = str_to_class(model_name)
         try:
-            obj = class_object.objects.get(pk=obj_id)
+            obj = model.objects.get(pk=obj_id)
             if obj.rating == None:
                 rating = Rating.objects.create()
                 rating.save()
@@ -45,7 +45,7 @@ def set_rating(request, obj_type, obj_id, vote_type):
                 tasks.task_compute_object_rating(obj_type, obj)
             else:
                 error = _("You already voted")
-        except class_object.DoesNotExist:
+        except model.DoesNotExist:
             error = _("You can't vote for this object")
     else:
         error = _("You can't vote for this object")
