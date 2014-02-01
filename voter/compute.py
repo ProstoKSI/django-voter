@@ -3,7 +3,11 @@ try:
     User = get_user_model()
 except ImportError:
     from django.contrib.auth.models import User
+from django.conf import settings
 from django.db.models import Q
+
+from misc.utils import str_to_class
+
 
 def recompute_obj_ratings(model, compute_func):
     print("Computing ratings for %s" % str(model))
@@ -11,8 +15,8 @@ def recompute_obj_ratings(model, compute_func):
         obj_list = model.objects.filter(Q(rating__likes__gte=1) | Q(rating__dislikes__gte=1))
     else:
         obj_list = model.objects.all()
-    for i, obj in enumerate(obj_list):
-        compute_func(obj, is_event=False)
+    for i, obj_id in enumerate(obj_list.values_list('id', flat=True)):
+        compute_func(obj_id, is_event=False)
         if i % 100 == 0:
             print("\t%d done." % i)
 
